@@ -1,0 +1,13 @@
+.buttom {
+    border: 1px solid rgba(255, 255, 255, .7);
+    padding: 0.5rem 1em;
+    border-radius: 30px;
+    background-color: transparent;
+    outline: none;
+    font-size: 18px;
+    margin-right: 1rem;
+
+    > i {
+        font-size: 24px;
+    }
+}
