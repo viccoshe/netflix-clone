@@ -1,0 +1,154 @@
+@import '../../../variables';
+
+.wrapper {
+	position: relative;
+	display: flex;
+	min-height: 514px;
+	
+
+	.main {
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: relative;
+		width: 100%;
+
+		&::before {
+			content: '';
+			background-image: linear-gradient(to right, #0f1011, transparent);
+			width: 150%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.modal {
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(0, 0, 0, 0.521);
+			position: fixed;
+			top: 0;
+			left: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			z-index: 3;
+		
+			.video {
+				padding: 2rem;
+				position: relative;
+				border-radius: 10px;
+				background-color: #0f1011;
+				width: 50vw;
+				z-index: 3;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-flow: wrap column;
+
+				>i {
+					cursor: pointer;
+					color: rgb(155, 154, 151);
+					font-size: 36px;
+					display: block;
+					margin-right: 0 auto;
+					padding: 1rem;
+					position: sticky;
+					top: 14%;
+					left: 29%;
+					align-self: end;
+				}
+
+				iframe {
+					width: 560px;
+					height: 315px;
+				}
+			}
+		}
+	}
+
+	.info {
+		position: relative;
+		align-items: center;
+		z-index: 1;
+		width: 50%;
+		padding: 5rem 0 5rem 1rem;
+
+		.additional {
+			display: flex;
+			align-items: center;
+			color: $gray;
+			margin: 2rem 0 2rem;
+
+			>span {
+				margin-right: 1rem;
+				font-size: 18px;
+			}
+
+			.age {
+				display: block;
+				border: 1px solid $gray;
+				border-radius: 15%;
+				padding: 3px 5px;
+			}
+		}
+
+		.description {
+			font-size: 18px;
+			color: $gray;
+			margin: 4rem 0 5rem;
+			line-height: 1.65;
+		}
+	}
+
+	.episodes{
+		position: relative;
+		z-index: 1;
+		width: 90%;
+		padding: 5rem 0 0 0;
+		display: flex;
+		justify-content: start;
+		flex-direction: column;
+		
+		.movieLogo {
+			padding-left: 1rem;
+		}
+
+
+		.seasons {
+			padding-left: 1rem;
+			background-color: transparent;
+			border: none;
+			font-size: 18px;
+			width: 7rem;
+			color: $gray;
+			margin: 3rem 0 2rem;
+
+			>option{
+				background-color: transparent;
+				border: none;
+			}
+		}
+
+		.swiper {
+			width: 100%;
+			margin: 0 auto;
+
+			>img{
+				position: relative;
+			}
+
+			.number {
+				font-size: 5em;
+				position: absolute;
+				top: 11%;
+				right: 41%;
+				color: #000000c5;
+				text-shadow: 0 0 10px #ffffff61, 1px 0px 5px rgba(255, 255, 255, 0.32);
+			}
+		}
+		
+
+	}
+}

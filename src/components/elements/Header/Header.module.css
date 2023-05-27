@@ -1,0 +1,95 @@
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.header {
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header > div:first-child {
+  display: flex;
+  align-items: center;
+}
+.header > div:first-child > a {
+  display: flex;
+  align-items: center;
+}
+.header .notification {
+  position: relative;
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
+.header .notification > i {
+  color: #fff;
+  font-size: 26px;
+}
+.header .notification > span {
+  background-color: #c62e21;
+  width: 10px;
+  height: 10px;
+  top: 0;
+  right: 0;
+  position: absolute;
+  background-repeat: 50%;
+  border: 1px solid #0f1011;
+  border-radius: 50%;
+}
+.header .profile-wrapper {
+  display: flex;
+  align-items: center;
+}
+.header .profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.header .profile .dropdown {
+  position: absolute;
+  top: 108%;
+  right: 0;
+  border: 1px solid red;
+  width: 10rem;
+  height: 7rem;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-flow: column;
+  background-color: #0f1011;
+  border: 1px solid rgb(28, 28, 35);
+  border-radius: 10px;
+  box-shadow: 3px 1px 58px 14px rgba(0, 0, 0, 0.32);
+}
+.header .profile .dropdown > button {
+  margin: 0 0 1rem 1rem;
+  padding: 5px 30px;
+  border: 1px solid rgba(128, 128, 128, 0.381);
+  background-color: transparent;
+  color: #9b9a97;
+  border-radius: 15px;
+}
+.header .profile .dropdown > button:hover {
+  background-color: #141516;
+}
+.header .profile .avatar {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.3rem;
+  overflow: hidden;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.header .profile > i {
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}/*# sourceMappingURL=Header.module.css.map */

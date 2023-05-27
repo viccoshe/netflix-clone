@@ -4,11 +4,10 @@ const tabs = [
     {
         _id: 1,
         name: "Overview",
-
     },
     {
         _id: 2,
-        name: "Epidodes",
+        name: "Episodes",
 
     },
     {
@@ -26,12 +25,10 @@ const BottomNavigation = ({activeTab, setActiveTab}) => {
                     key={tab._id} 
                     onClick={() => setActiveTab(tab._id)}
                     className={activeTab === tab._id ? styles.active : ''}
-                    >
+                >
                         {tab.name}
-                    </button>
+                </button>
             )}
-
-            <button>Episodes</button>
         </nav>
      );
 }

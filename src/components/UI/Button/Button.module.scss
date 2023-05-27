@@ -1,13 +1,26 @@
-.buttom {
-    border: 1px solid rgba(255, 255, 255, .7);
-    padding: 0.5rem 1em;
-    border-radius: 30px;
-    background-color: transparent;
-    outline: none;
-    font-size: 18px;
-    margin-right: 1rem;
+@import '../../../variables';
 
-    > i {
-        font-size: 24px;
-    }
+.button {
+	border: 1px solid rgba(255, 255, 255, 0.7);
+	padding: 0.5rem 1rem;
+	border-radius: 30px;
+	background-color: transparent;
+	outline: none;
+	font-size: 18px;
+	margin-right: 2rem;
+	color: $gray;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 170px;
+
+	&:hover {
+		background-color: #00000056;
+		border: 1px solid rgba(255, 255, 255, 0.468);
+	}
+
+	> i {
+		font-size: 38px;
+		margin-right: 0.5rem;
+	}
 }

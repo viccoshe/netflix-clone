@@ -1,5 +1,5 @@
-import avengers from './images/avengers.png'
-import bg from './images/bg.jpg'
+import avengers from './../images/avengers.png';
+import bg from './../images/bg.jpg';
 
 export const DATA = [
 	{
@@ -19,5 +19,7 @@ export const DATA = [
 			'https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2021/04/avengers-endgame-1619486515.jpg',
 			'https://www.gamespot.com/a/uploads/screen_kubrick/1582/15828986/3505175-endgame%20head.jpg',
 		],
+		seasons: ['Season 1', 'Season 2', 'Season 3'],
+		trailer: 'https://www.youtube.com/watch?v=6ZfuNTqbHE8',
 	},
 ]

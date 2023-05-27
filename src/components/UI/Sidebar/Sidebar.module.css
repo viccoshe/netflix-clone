@@ -1,0 +1,39 @@
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.slidebar > button {
+  background-color: transparent;
+  border: none;
+  color: #9b9a97;
+  font-size: 30px;
+}
+.slidebar ul {
+  list-style-type: none;
+  padding: 0;
+  display: none;
+  animation: opacity 0.4s;
+}
+.slidebar ul.show {
+  display: block;
+}
+.slidebar ul li {
+  margin-bottom: 0.5rem;
+}
+.slidebar ul li a {
+  padding: 0.5rem;
+  display: block;
+  color: #9b9a97;
+  text-decoration: none;
+  border-right: 2px solid transparent;
+  font-size: 20px;
+  padding-left: 80px;
+}
+.slidebar ul li a:hover, .slidebar ul li a.active {
+  background-color: #c62e21;
+  background-color: #2b2a2a;
+}/*# sourceMappingURL=Sidebar.module.css.map */

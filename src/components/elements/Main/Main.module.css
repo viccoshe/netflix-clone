@@ -1,0 +1,138 @@
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.wrapper {
+  position: relative;
+  display: flex;
+  min-height: 514px;
+}
+.wrapper .main {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+}
+.wrapper .main::before {
+  content: "";
+  background-image: linear-gradient(to right, #0f1011, transparent);
+  width: 150%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.wrapper .main .modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.521);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.wrapper .main .modal .video {
+  padding: 2rem;
+  position: relative;
+  border-radius: 10px;
+  background-color: #0f1011;
+  width: 50vw;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: wrap column;
+}
+.wrapper .main .modal .video > i {
+  cursor: pointer;
+  color: rgb(155, 154, 151);
+  font-size: 36px;
+  display: block;
+  margin-right: 0 auto;
+  padding: 1rem;
+  position: sticky;
+  top: 14%;
+  left: 29%;
+  align-self: end;
+}
+.wrapper .main .modal .video iframe {
+  width: 560px;
+  height: 315px;
+}
+.wrapper .info {
+  position: relative;
+  align-items: center;
+  z-index: 1;
+  width: 50%;
+  padding: 5rem 0 5rem 1rem;
+}
+.wrapper .info .additional {
+  display: flex;
+  align-items: center;
+  color: #9b9a97;
+  margin: 2rem 0 2rem;
+}
+.wrapper .info .additional > span {
+  margin-right: 1rem;
+  font-size: 18px;
+}
+.wrapper .info .additional .age {
+  display: block;
+  border: 1px solid #9b9a97;
+  border-radius: 15%;
+  padding: 3px 5px;
+}
+.wrapper .info .description {
+  font-size: 18px;
+  color: #9b9a97;
+  margin: 4rem 0 5rem;
+  line-height: 1.65;
+}
+.wrapper .episodes {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  padding: 5rem 0 0 0;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+}
+.wrapper .episodes .movieLogo {
+  padding-left: 1rem;
+}
+.wrapper .episodes .seasons {
+  padding-left: 1rem;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  width: 7rem;
+  color: #9b9a97;
+  margin: 3rem 0 2rem;
+}
+.wrapper .episodes .seasons > option {
+  background-color: transparent;
+  border: none;
+}
+.wrapper .episodes .swiper {
+  width: 100%;
+  margin: 0 auto;
+}
+.wrapper .episodes .swiper > img {
+  position: relative;
+}
+.wrapper .episodes .swiper .number {
+  font-size: 5em;
+  position: absolute;
+  top: 11%;
+  right: 41%;
+  color: rgba(0, 0, 0, 0.7725490196);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3803921569), 1px 0px 5px rgba(255, 255, 255, 0.32);
+}/*# sourceMappingURL=Main.module.css.map */

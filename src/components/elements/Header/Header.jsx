@@ -1,6 +1,6 @@
-import Search from "../../Search/Search";
+import Search from "../../UI/Search/Search";
 import styles from "./Header.module.scss";
-import Profile from "./Profile";
+import Profile from "./Profile"; 
 
 const Header = () => {
     return (
@@ -8,7 +8,7 @@ const Header = () => {
             <div>
             <a href='/'>
                 <img 
-                    src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" 
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" 
                     alt="Netflix" 
                     height='35'
                     wigth='112'
