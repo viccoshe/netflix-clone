@@ -5,7 +5,7 @@ import Films from "../../elements/Routes/Films/Films";
 import Watchlist from "../../elements/Routes/Watchlist/Watchlist";
 import TvShows from "../../elements/Routes/TvShows/TvShows";
 
-const menu = ['Popular', 'TV shows', 'Films', 'Watchlist'];
+const menu = ['Popular', 'Films', 'Watchlist'];
 
 const Sidebar = ({ isSidebarShow, setIsSidebarShow  }) => {
     return ( 
@@ -17,8 +17,9 @@ const Sidebar = ({ isSidebarShow, setIsSidebarShow  }) => {
                 <i className={`bx bx-${isSidebarShow ? 'x' : 'align-left'}`}></i>
             </button>
             <ul className={isSidebarShow ? styles.show : ''}>
-                {menu.map(title => (
-                    <li key={title}>
+                {menu.map((title, i) => (title === "Popular" 
+                    ? <li key={i}><Link>{title}</Link></li> 
+                    : <li key={title}>
                         <Link to={"/" + title.toLowerCase().replace(/\s/g, '')}>
                             {title}
                         </Link> 
