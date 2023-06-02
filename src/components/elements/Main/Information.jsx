@@ -1,7 +1,6 @@
 import styles from './Main.module.scss';
 import Button from '../../UI/Button/Button';
-import VideoPlayer from '../../UI/VideoPlayer/VideoPlayer';
-import { useState } from "react";
+
 
 const Information = ({ movie, openVideo, setOpenVideo }) => {
     const { alternativeName: name, 

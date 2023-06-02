@@ -13,6 +13,10 @@ import ErrorPage from "./components/UI/ErrorPage/ErrorPage";
 import { getApi } from "./data";
 import { dataLoader } from "./data";
 import NotFoundPage from "./components/elements/Routes/NotFoundPage/NotFoundPage";
+import Login from "./components/UI/Login/Login";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./utiles";
+
 
 
 export const DataContext = createContext();
@@ -35,6 +39,7 @@ function App() {
         <Route path="/watchlist" element={<Watchlist/>} />
         <Route path="/films" element={<Films/>} />
         <Route path="*" element={<NotFoundPage/>}/>
+        <Route path="/login" element={<Login/>}/>
       </Route>
     )
   )
@@ -55,10 +60,40 @@ export default App;
 
 const Root = () => { 
   const [isSidebarShow, setIsSidebarShow] = useState(false);
+  const [loginWindow, setLoginWindow] = useState(true);
+  const [signUp, setSignUp] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    if(!user || user === null){
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            const currentUser = {
+              id: user?.uid,
+              name: user?.displayName
+            }
+            setUser(currentUser);
+            console.log(user)
+          } else {
+            setUser(null);
+          }
+        });
+      }
+  })
 
   return (
     <>
-        <Header /> 
+      {loginWindow 
+      ? <Login signUp={signUp} 
+               setSignUp={setSignUp}
+               loginWindow={loginWindow} 
+               setLoginWindow={setLoginWindow}
+        /> 
+      : ''
+      }
+        <Header user={user}
+                setuser={setUser}
+        /> 
         <div style={{
             display: 'flex',
             flexDirection: 'row'}}

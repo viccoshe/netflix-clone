@@ -5,7 +5,7 @@ import { DATA } from '../../../data';
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ( {user, setUser }) => {
     const data = DATA;
     const [ query, setQuery ] = useState('');
 
@@ -23,7 +23,7 @@ const Header = () => {
                 </a>
                 <Search query={ query } setQuery={ setQuery }/>                 
                 </div>
-                <Profile/>      
+                <Profile user={user} setuser={setUser} />      
             </div>  
             <div className={styles.query}>
                 {query
