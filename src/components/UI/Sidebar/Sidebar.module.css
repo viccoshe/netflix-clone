@@ -6,34 +6,38 @@
     opacity: 1;
   }
 }
-.slidebar > button {
+.sidebar > button {
   background-color: transparent;
   border: none;
   color: #9b9a97;
   font-size: 30px;
+  padding: 35px;
 }
-.slidebar ul {
+.sidebar > button > i {
+  font-size: 35px;
+}
+.sidebar ul {
   list-style-type: none;
   padding: 0;
   display: none;
   animation: opacity 0.4s;
 }
-.slidebar ul.show {
+.sidebar ul.show {
   display: block;
 }
-.slidebar ul li {
+.sidebar ul li {
   margin-bottom: 0.5rem;
 }
-.slidebar ul li a {
+.sidebar ul li a {
   padding: 0.5rem;
   display: block;
   color: #9b9a97;
   text-decoration: none;
-  border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
   font-size: 20px;
-  padding-left: 80px;
+  text-align: right;
 }
-.slidebar ul li a:hover, .slidebar ul li a.active {
-  background-color: #c62e21;
-  background-color: #2b2a2a;
+.sidebar ul li a:hover, .sidebar ul li a.active {
+  border-color: #b51313;
+  background-color: #2a2a2c;
 }/*# sourceMappingURL=Sidebar.module.css.map */

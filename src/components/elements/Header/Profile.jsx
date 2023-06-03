@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import { useState } from 'react';
 import { signOutUser } from '../../../utiles';
+import Button from '../../UI/Button/Button';
 
-const Profile = ( {user, setUser }) => {
+const Profile = ( { loginWindow, setLoginWindow, user, setUser }) => {
     const [activeDropdown, setActiveDropdown] = useState(false);
 
     return ( 
@@ -40,7 +41,7 @@ const Profile = ( {user, setUser }) => {
 
                         :
                         
-                            <Link to="/login">Log In</Link>
+                            <Button cb={ () => setLoginWindow(!loginWindow)}>Log In</Button>
                         }
 
                     </div>

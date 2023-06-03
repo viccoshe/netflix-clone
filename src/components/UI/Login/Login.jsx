@@ -5,17 +5,15 @@ import Button from "../Button/Button";
 import { singInUser, signOutUser, logInViaGoogle }from "./../../../utiles/index";
 
 
-
 const Login = ({ signUp, setSignUp, loginWindow, setLoginWindow}) => {
-
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
 
     const logInNewUser = (e) => {
         e.preventDefault();
         singInUser(email, password);
+        setLoginWindow(!loginWindow);
     }
-
 
     return ( 
         <div className={styles.wrapper}>
@@ -30,33 +28,49 @@ const Login = ({ signUp, setSignUp, loginWindow, setLoginWindow}) => {
                 {!signUp 
                 ?
                     <div className={styles.form}>
-                        <h5>Log In</h5>
+                        <h2>Welcome back</h2>
                         <form onSubmit={logInNewUser}>
                             <label>Email</label>
                             <input 
                                 onChange={ (e) => setEmail(e.target.value) }
                                 type="email" 
-                                placeholder="Your email" 
+                                placeholder="Enter your email" 
                             />
                             <label>Password</label>
                             <input 
                                 onChange={ (e) => setPassword(e.target.value) } 
                                 type="password" 
-                                placeholder="Your password" 
-                            />     
-                            <Button type="submit"> Log IN</Button>
-                        <span>Haven't got acc?</span>s
+                                placeholder="Enter your password" 
+                            />
+                            <div className={styles.newAccBtns}>
+                                <span>New to <b>Netflix?</b></span>
+                                <div onClick={() => setSignUp(!signUp)}>Create an account.</div> 
+                            </div>  
+
+
+                            <button 
+                                className={styles.signInBtn} 
+                                type="submit">
+                                    Sign In
+                            </button>
                         </form>
-                        <Button cb={() => setSignUp(!signUp)}> SIGN UP</Button>
+                        
                     </div>   
                 :
                 <SignUp signUp={signUp} 
                         setSignUp={setSignUp}
+                        loginWindow={loginWindow}
+                        setLoginWindow={setLoginWindow}
                 />
                 }
-                <span>or via Google</span>
-                <button onClick={logInViaGoogle} type="submit">Login via Google</button>
-                <Button cb={ () => signOutUser() } style={{border: "1px solid red"}}>LOG OUT</Button>
+                <button 
+                    className={styles.googleBtn} 
+                    onClick={logInViaGoogle} 
+                    type="submit">
+                        <i className='bx bxl-google bx-sm'></i>
+                        Sign in with Google
+                </button>
+                {/* <Button cb={ () => signOutUser() } style={{border: "1px solid red"}}>LOG OUT</Button> */}
             </div>            
         </div>
 

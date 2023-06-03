@@ -3,7 +3,7 @@ import { registerUser } from "../../../utiles";
 import { useState } from "react";
 import styles from "./../Login/Login.module.scss"
 
-const SignUp = ({  signUp, setSignUp,}) => {
+const SignUp = ({  signUp, setSignUp, loginWindow, setLoginWindow}) => {
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
 
@@ -11,6 +11,7 @@ const SignUp = ({  signUp, setSignUp,}) => {
     const signUpNewUser = (e) => {
         e.preventDefault();
         registerUser(email, password);
+        setLoginWindow(!loginWindow);
     }
 
     return (
@@ -34,8 +35,9 @@ const SignUp = ({  signUp, setSignUp,}) => {
                     <button type="submit">Sign Up</button>
                     
                 <span>Already ave got an acc?</span>
+                <button onClick={() => setSignUp(!signUp)}>Log in</button>
                 </form>
-                <Button cb={() => setSignUp(!signUp)}>LOG IN</Button>
+                <Button cb={() => setSignUp(!signUp)}>Submit</Button>
             </div>   
             
         </div>

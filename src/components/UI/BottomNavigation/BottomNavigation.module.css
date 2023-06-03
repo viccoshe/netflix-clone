@@ -6,21 +6,25 @@
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 1;
 }
 .nav > button {
   opacity: 0.8;
   transition: border-color 0.4s ease, opacity 0.4s ease;
-  border-bottom: 2px solid transparent;
+  border: none;
+  border-bottom: 4px solid transparent;
   padding-bottom: 0.5rem;
   font-size: 20px;
   text-transform: uppercase;
   color: #fff;
+  background-color: transparent;
+  margin: 0 1rem;
 }
 .nav > button.active {
   border-color: #c62e21;
   opacity: 1;
 }
 .nav > button:hover {
-  border-color: #7c1d15;
+  border-color: #982117;
   opacity: 1;
 }/*# sourceMappingURL=BottomNavigation.module.css.map */

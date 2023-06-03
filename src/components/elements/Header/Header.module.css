@@ -95,6 +95,7 @@
 }
 
 .query {
+  display: none;
   width: 100px;
   height: 100px;
   color: white;

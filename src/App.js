@@ -39,7 +39,6 @@ function App() {
         <Route path="/watchlist" element={<Watchlist/>} />
         <Route path="/films" element={<Films/>} />
         <Route path="*" element={<NotFoundPage/>}/>
-        <Route path="/login" element={<Login/>}/>
       </Route>
     )
   )
@@ -93,6 +92,9 @@ const Root = () => {
       }
         <Header user={user}
                 setuser={setUser}
+                loginWindow={loginWindow} 
+                setLoginWindow={setLoginWindow}
+                
         /> 
         <div style={{
             display: 'flex',
