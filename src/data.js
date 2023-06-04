@@ -73,7 +73,6 @@ export const DATA = [
 		name: 'Avengers',
 		alternativeName: 'Avengers',
 		id: 75478,
-
 		rate: 5.6,
 		mainImage: bg,
 		year: 2019,

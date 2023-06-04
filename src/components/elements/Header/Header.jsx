@@ -1,14 +1,15 @@
 import Search from "../../UI/Search/Search";
 import styles from "./Header.module.scss";
 import Profile from "./Profile";
-import { DATA } from '../../../data'; 
+import { DATA } from '../../../data';
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = ( {user, setUser, loginWindow, setLoginWindow }) => {
     const data = DATA;
     const [ query, setQuery ] = useState('');
-
+    console.log(user)
+    
     return (
         <>
             <div className={styles.header}>

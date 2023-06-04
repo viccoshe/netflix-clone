@@ -74,11 +74,15 @@
   width: 50%;
   padding: 5rem 0 5rem 1rem;
 }
+.wrapper .info h1 {
+  color: #fff;
+  font-size: 3em;
+}
 .wrapper .info .additional {
   display: flex;
   align-items: center;
   color: #9b9a97;
-  margin: 2rem 0 2rem;
+  margin: 0.5rem 0 2rem;
 }
 .wrapper .info .additional > span {
   margin-right: 1rem;

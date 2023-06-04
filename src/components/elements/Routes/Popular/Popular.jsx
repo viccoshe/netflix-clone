@@ -6,17 +6,17 @@ import {DATA} from "../../../../data";
 
 
 const Popular = () => {
-    // const  [popularMovies, setPopularMovies ] = useState([]);
+    const  [popularMovies, setPopularMovies ] = useState([]);
     const navigation = useNavigation();
     //const data = useLoaderData();
     let data = DATA;
 
-    // useEffect(() => {
-    //     const ratingOfMovies = data.sort(function(a, b) {
-    //         return a?.ratingKinopoisk - b?.ratingKinopoisk;
-    //     }); 
-    //     setPopularMovies(ratingOfMovies);
-    // }, [])
+    useEffect(() => {
+        const ratingOfMovies = data.sort(function(a, b) {
+            return a?.rating - b?.rating;
+        }); 
+        setPopularMovies(ratingOfMovies);
+    }, [])
 
     if( navigation === 'loading'){
         return <h1>Loading...</h1>
@@ -25,9 +25,9 @@ const Popular = () => {
         <div className={styles.popular}>
             <h1>Popular</h1>
                 <ul>
-                    {data.length > 0 
+                    {popularMovies.length > 0 
                     ?
-                        data.map((movie, i) => {
+                    popularMovies.map((movie, i) => {
                             return <li key={movie.id}>
                                         <Link to={"/" + i}>
                                             {movie.alternativeName ? movie.alternativeName : movie.name}
@@ -35,7 +35,7 @@ const Popular = () => {
                                     </li>
                     })
                     :
-                    <li>There en error</li>                   
+                    <li>There is no such thing as popular</li>                   
                     }
                 </ul>
 

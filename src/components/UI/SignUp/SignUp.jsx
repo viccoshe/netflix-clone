@@ -17,7 +17,7 @@ const SignUp = ({  signUp, setSignUp, loginWindow, setLoginWindow}) => {
     return (
         <div>
             <div className={styles.form}>
-                <h5>Sign Up</h5>
+                <h2>Sign Up</h2>
                 <form onSubmit={signUpNewUser}>
                     <label>Email</label>
                     <input 
@@ -31,13 +31,13 @@ const SignUp = ({  signUp, setSignUp, loginWindow, setLoginWindow}) => {
                         type="password" 
                         placeholder="Your password" 
                     />
-                    <p>or via Google</p>
-                    <button type="submit">Sign Up</button>
-                    
-                <span>Already ave got an acc?</span>
-                <button onClick={() => setSignUp(!signUp)}>Log in</button>
+                    <button type="submit" className={styles.signInBtn}>Sign Up</button>
+                    <div className={styles.newAccBtns}>
+                        <span>Already have got an account?</span>
+                        <div onClick={() => setSignUp(!signUp)}>Log in</div>                    
+                    </div>
+
                 </form>
-                <Button cb={() => setSignUp(!signUp)}>Submit</Button>
             </div>   
             
         </div>

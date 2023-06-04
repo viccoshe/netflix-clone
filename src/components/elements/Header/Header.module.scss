@@ -1,11 +1,5 @@
 @import '../../../variables';
 
-
-.wrapper {
-    
-
-}
-
 .header {
     padding: 20px 40px;
     display: flex;
@@ -72,11 +66,17 @@
             -webkit-box-shadow: 3px 1px 58px 14px rgba(0, 0, 0, 0.32);
             -moz-box-shadow: 3px 1px 58px 14px rgba(0, 0, 0, 0.32);
             box-shadow: 3px 1px 58px 14px rgba(0, 0, 0, 0.32);
+
+            >a {
+                text-decoration: none;
+                display: block;
+            }
             
-            >button {
+            button, a {
+                font-size: 15px;
                 margin: 0 0 1rem 1rem;
                 padding: 5px 30px;
-                border: 1px solid rgba(128, 128, 128, 0.381);
+                border: none;
                 background-color: transparent;
                 color: $gray;
                 border-radius: 15px;

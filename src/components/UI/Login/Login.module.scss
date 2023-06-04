@@ -1,8 +1,8 @@
 @import "./../../../_variables.scss";
 
 .wrapper {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.521);
     position: fixed;
     top: 0;
@@ -19,7 +19,7 @@
         padding: 3rem;
         position: relative;
         border-radius: 10px;
-        background-color: #0f1011;
+        background-image: radial-gradient(circle, #30302a, #2b2724, #231f1e, #191718, #0f0f0f);   
         z-index: 3;
         display: flex;
         flex-direction: column;
@@ -35,19 +35,20 @@
             color: rgb(155, 154, 151);
             font-size: 36px;
             display: block;
-            margin-right: 0 auto;
-
             position: sticky;
             top: 14%;
             left: 29%;
             align-self: end;
+
+            &:hover {
+                color: rgb(109, 109, 107);
+            }
         }
 
         .form, form{
             display: flex;
             width: 17rem;
             height: 100%;
-            //border: 1px solid purple;
             flex-direction: column;
             align-items: center;
 
@@ -79,6 +80,9 @@
                 }
                 &:focus {
                     outline: none;
+                }
+                &:hover {
+                    background-color: #ffffff25;
                 }
             }
 
@@ -137,7 +141,7 @@
             background-color: #ffffff;
 
             &:hover {
-                background-image: radial-gradient(circle, #ffffff, #f4f4f4, #e9e9e9, #dedede, #c1c0c0);
+                background-image: radial-gradient(circle, #ffffff, #dddcdc, #c4c1c1, #b7b5b5, #c1c0c0);
             }
 
             i {

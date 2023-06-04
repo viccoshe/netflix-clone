@@ -4,6 +4,7 @@ import { Navigation, Thumbs, Mousewheel} from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/mousewheel';
+import { DATA} from "./../../../../data";
 
 const Episodes = ( {movie} ) => {
 
@@ -11,12 +12,13 @@ const Episodes = ( {movie} ) => {
 
     return (
         <div className={styles.episodes}>
-            <img className={styles.movieLogo}
+             <h1>{movie.name}</h1>
+            {/* <img className={styles.movieLogo}
                 src={movie.logo}
                 alt={movie.name}
                 width='270'
                 style={{ opacity: 0.7 }}
-            />
+            /> */}
 
             <select className={styles.seasons}>
                 {movie.seasons && movie?.seasons.map(season => (
@@ -32,7 +34,10 @@ const Episodes = ( {movie} ) => {
                     navigation
                     mousewheel
                     >
-                        {movie?.photos.map((photo, id) =>(
+                        {movie?.photos
+                        
+                        ?
+                        movie.photos.map((photo, id) =>(
                             <SwiperSlide>
                                 <div>
                                     <img 
@@ -44,7 +49,22 @@ const Episodes = ( {movie} ) => {
                                     <div className={styles.number}>{(++id).toString()}</div>
                                 </div>
                             </SwiperSlide>
-                        ))}      
+                        ))
+                        : 
+                        DATA[0].photos.map((photo, id) =>(
+                            <SwiperSlide>
+                                <div>
+                                    <img 
+                                        key={id} 
+                                        style={{ width: '100%', borderRadius: '2%'}} 
+                                        src={photo} 
+                                        alt={movie.name}>
+                                    </img>
+                                    <div className={styles.number}>{(++id).toString()}</div>
+                                </div>
+                            </SwiperSlide>
+                        ))
+                    }      
             </Swiper>
             </div>
             

@@ -21,7 +21,7 @@ const Login = ({ signUp, setSignUp, loginWindow, setLoginWindow}) => {
                 <i  
                     onClick={() => setLoginWindow(!loginWindow)}
                     className='bx bx-x' 
-                    style={{ color: '#9b9a97', fontSize: '36px' }}>
+                    >
                 
                 </i>
 
@@ -48,11 +48,7 @@ const Login = ({ signUp, setSignUp, loginWindow, setLoginWindow}) => {
                             </div>  
 
 
-                            <button 
-                                className={styles.signInBtn} 
-                                type="submit">
-                                    Sign In
-                            </button>
+                            <button className={styles.signInBtn}type="submit">Sign In</button>
                         </form>
                         
                     </div>   

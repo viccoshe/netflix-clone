@@ -33,7 +33,7 @@ const Information = ({ movie, openVideo, setOpenVideo }) => {
 			/> */}
         <div className={styles.additional}>
             <span>{year}</span>
-            <span className={styles.age}>{limitAge ? limitAge : "+6"}</span>
+            <span className={styles.age}>{limitAge ? limitAge : "6+"}</span>
             <span>{rate.imdb}</span>
             <span>{filmLength}</span>
         </div>

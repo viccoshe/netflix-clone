@@ -22,8 +22,7 @@ const Main = () => {
             <div 
                 className={styles.main}
                 style={{
-                    backgroundImage: `url(${data[`${id}`].mainImage})`, //backgroundImage: `url(${data[`${id}`].poster.url})`,  
-                    // width: isSidebarShow ? '85%' : '90%',
+                    backgroundImage: `url(${data[`${id}`].mainImage})`
                 }}
             >
                 {activeTab === 1 ? (

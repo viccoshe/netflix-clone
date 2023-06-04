@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { DATA } from "./../../../../data";
+import styles from "./Watchlist.module.scss";
 
 const Watchlist = () => {
    //const data = useLoaderData();
@@ -12,24 +13,42 @@ const Watchlist = () => {
       }
    })
 
-
-
     return ( 
-      <div>
+      <>
             <h1>Your watchlist</h1>
-            {favourites.length > 0 
-            ?
-            favourites.map((movie, i) => {
-                  return <li key={movie.id}>
-                              <Link to={"/" + i}>
-                                    {movie.alternativeName ? movie.alternativeName : movie.name}
-                              </Link>   
-                        </li>
-                  })
-            :
-            <li>Add something to your watchlist</li>                   
-            }
-      </div>
+            <div className={styles.watchlist}>
+                  {favourites.length > 0 
+                  ?
+                  favourites.map((movie, i) => {
+                        return <div key={movie.id}
+                                    className={styles.item}>
+
+                                    <div className={styles.itemImg}>
+                                          <img src={movie.mainImage} alt={movie.name} />   
+                                    </div>
+                                    <div className={styles.itemDetails}>
+                                          <Link to={"/" + i}>
+                                                {movie.alternativeName ? movie.alternativeName : movie.name}
+                                          </Link>  
+                                          <div className={styles.genres}>
+                                                <span>{movie.genre ? movie.genre : 'Action'}</span>
+                                                <div><i class='bx bxs-star'></i>
+                                                      {movie.rating}
+                                                </div>  
+                                          </div> 
+                                          <div>Time: <span>{movie.filmLength.toUpperCase(movie.filmLength)}</span></div>
+                                          <div>{movie.shortDescription}</div>
+                                    </div>
+                                    <i class='bx bx-message-square-x bx-sm'></i>
+                              </div>
+ 
+                        })
+                  :
+                  <li>Add something to your watchlist</li>                   
+                  }
+            </div>      
+      </>
+      
 
      );
 }

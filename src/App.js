@@ -69,7 +69,10 @@ const Root = () => {
           if (user) {
             const currentUser = {
               id: user?.uid,
-              name: user?.displayName
+              name: user?.displayName,
+              photo: user?.photoURL,
+              notifications: null
+
             }
             setUser(currentUser);
             console.log(user)
@@ -82,7 +85,7 @@ const Root = () => {
 
   return (
     <>
-      {loginWindow 
+      {!user && user === null && loginWindow 
       ? <Login signUp={signUp} 
                setSignUp={setSignUp}
                loginWindow={loginWindow} 
