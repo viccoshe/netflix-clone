@@ -1,6 +1,6 @@
 import styles from "./../Main.module.scss";
 import { Swiper, SwiperSlide, useSwiperSlide} from 'swiper/react';
-import { Navigation, Thumbs, Mousewheel} from 'swiper';
+import { Navigation, Mousewheel} from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/mousewheel';

@@ -75,7 +75,6 @@ const Root = () => {
 
             }
             setUser(currentUser);
-            console.log(user)
           } else {
             setUser(null);
           }
