@@ -19,7 +19,9 @@
         padding: 3rem;
         position: relative;
         border-radius: 10px;
-        background-image: radial-gradient(circle, #30302a, #2b2724, #231f1e, #191718, #0f0f0f);   
+        background-color: rgb(14, 14, 14);
+        border: 1px solid rgb(26, 26, 26);
+        //background-image: radial-gradient(circle, #30302a, #2b2724, #231f1e, #191718, #0f0f0f);   
         z-index: 3;
         display: flex;
         flex-direction: column;

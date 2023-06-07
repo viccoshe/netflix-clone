@@ -1,7 +1,8 @@
 @import '../../../../variables';
+
 h1 {
     color: $gray;
-    margin: 2rem;
+    margin: 2rem 3.5rem;
 }
 
 a {
@@ -16,7 +17,7 @@ a {
     flex-direction: column;
 
     .item {
-        height: 40%;
+        height: 78%;
         width: 90%;
         align-items: center;
         display: flex;
@@ -35,15 +36,22 @@ a {
 
         }
 
-    
-        >i {
-            cursor: pointer;
-            margin-top: 1rem;
+        button {
             align-self: flex-start;
+            border: none;
+            background-color: transparent;
+            >i {
+                cursor: pointer;
+                margin-top: 1rem;
+                color: $gray;
+                
 
-            &:hover {
-                color: #515151;
+                &:hover {
+                    color: #515151;
+                }
             }
+    
+
         }
     
         .itemImg {
@@ -116,6 +124,22 @@ a {
         }
 
 
+    }
+
+    .emptyList {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: wrap column;
+
+        i {
+            font-size: 80px;
+            margin-bottom: 1rem;
+        }
+
+        span {
+            font-size: 20px;
+        }
     }
 
 

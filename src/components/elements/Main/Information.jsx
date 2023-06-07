@@ -1,5 +1,6 @@
 import styles from './Main.module.scss';
 import Button from '../../UI/Button/Button';
+import { addToFavourites } from '../../../utiles';
 
 
 const Information = ({ movie, openVideo, setOpenVideo }) => {
@@ -7,20 +8,6 @@ const Information = ({ movie, openVideo, setOpenVideo }) => {
             shortDescription: desc, 
         id, genres, logo, limitAge, rating: rate, poster, filmLength, year } = movie;
 
-    const addToFavourites = ( movieName ) => {
-        let favourites = JSON.parse(localStorage.getItem('favourites'));
-        if(favourites && favourites.length > 0){
-            if(favourites.some((item, i) => item[0] === id)){
-                alert(`"${movie.name}" is already in your watchlist!`)
-            }else{
-                localStorage.setItem('favourites', JSON.stringify([...favourites, [id]])); 
-                alert(`"${movie.name}" is in your watchlist now!`)    
-            }
-        }else{
-            localStorage.setItem('favourites', JSON.stringify([[id]])); 
-            alert(`"${movie.name}" is in your watchlist now!`)   
-        }
-    }
 
     return ( 
     <div className={styles.info}>
@@ -45,7 +32,7 @@ const Information = ({ movie, openVideo, setOpenVideo }) => {
                         <i className='bx bx-play' style={{ color: '#c62e21' }}></i>
                         <span>Play</span>
             </Button>
-            <Button cb={addToFavourites}>
+            <Button cb={() => addToFavourites(movie)}>
                 <i className='bx bx-plus'></i>
                 <span>My list</span>
             </Button>

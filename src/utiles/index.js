@@ -20,6 +20,7 @@ export const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 
+
 export const registerUser = async( email, password ) => {
   createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -53,3 +54,47 @@ export const logInViaGoogle = async() => {
     console.log('Error code is ' + error.code + ': ' + error.message)
   });
 }
+
+export  const addToFavourites = ( movie ) => {
+  let favourites = JSON.parse(localStorage.getItem('favourites'));
+  if(favourites && favourites.length > 0){
+      if(favourites.some((item, i) => item[0] === movie.id)){
+          alert(`"${movie.name}" is already in your watchlist!`)
+      }else{
+          localStorage.setItem('favourites', JSON.stringify([...favourites, [movie.id]])); 
+          alert(`"${movie.name}" is in your watchlist now!`)    
+      }
+  }else{
+      localStorage.setItem('favourites', JSON.stringify([[movie.id]])); 
+      alert(`"${movie.name}" is in your watchlist now!`)   
+  }
+}
+
+export const toggleFavourites = ( movie ) => {
+  let favourites = JSON.parse(localStorage.getItem('favourites'));
+  if(favourites && favourites.length > 0){
+    if(favourites.some((item, i) => item[0] === movie.id)){
+        removeFromFavourites(movie);
+    }else{
+      addToFavourites(movie); 
+    }
+}else{
+    addToFavourites(movie);    
+}
+
+}
+
+export  const removeFromFavourites = ( movie ) => {
+  let favourites = JSON.parse(localStorage.getItem('favourites'));
+  if(favourites && favourites.length > 0){
+      if(favourites.some((item) => item[0] === movie.id)){
+        const elem = favourites.find((item, i) => item[i] === movie.id);
+          favourites = favourites.filter(i => i !== favourites.find((item, i) => item[0] === movie.id));
+          localStorage.setItem('favourites', JSON.stringify(favourites));
+          alert(`"${movie.name}" is removed from your watchlist!`);
+      }else{ 
+          alert(`"${movie.name}" is not in your watchlist :(`)    
+      }
+  }
+}
+

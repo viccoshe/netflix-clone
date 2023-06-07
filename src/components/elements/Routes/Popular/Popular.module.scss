@@ -1,13 +1,15 @@
 @import "./../../../../_variables";
 
+
 .popular {
     color: white;
-    margin: 3rem;
+    margin: 0 3rem 3rem;
 
     h1 {
         font-size: 3.5em;
         margin-bottom: 1rem;
         margin-left: 0;
+        
     }
 
     .popularBlock {
@@ -45,7 +47,7 @@
         }
 
         h1 {
-            color: #fff;
+            color: #e3e3e3;
 
         }
 
@@ -89,30 +91,111 @@
             background-color: $red;
 
             a {
-                color: #fff;             
+                color: #e3e3e3;           
             }
             &:hover {
                 background-color: $darkRed;
             }
         }
-
-    }
-
-    h1 {
         
+
     }
+
+    h2 {
+        margin-top: 3rem;
+        color: $gray;
+    }
+
 
     .trendWrapper {
+        color: $gray;
 
         .trendItem {
-            border: 1px solid red;
+            position: relative;
             border-radius: 10px;
             background-size: cover;
             background-repeat: no-repeat;
-            width: 10rem;
-            height: 10rem;
-        }
+            width: 50%;
+            height: 16rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-flow: wrap column;
+            background-position: center;
+            background-repeat: no-repeat;
+            &:hover {
+                transition: all .2s ease-in-out;
+                transform: scale(0.96);
+            }
 
+            &::before {
+                content: '';
+                background-image: linear-gradient(to right, #0f1011ab,  transparent);
+                width: 170%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            * {
+                z-index: 2;
+            }
+
+
+            .trendRate {
+                color: #fff;
+                background-color: #00000090;
+                border-radius: 10px;
+                margin: 0.5rem;
+                padding: 4px;
+                
+                > i {
+                    color: rgb(247, 206, 0);  
+                    margin-right: 3px;
+                }
+            }
+
+            >a {
+                margin: 3rem 0 0 1rem;
+                color: #e3e3e3;
+                font-weight: 600;
+                font-size: 29px;
+
+                &:hover {
+                    color: $gray;
+                }
+
+            }
+
+            .year {
+                margin-left: 1rem;
+                color: #cdcdcd;
+                font-weight: 600;
+                font-size: 17px;
+
+            }
+
+            button {
+                background: #9b9a9757;
+                border-radius: 50%;
+                width: 3rem;
+                height: 3rem;
+                border: none;
+                padding: 0.5rem;
+                justify-self: end;
+                margin: 1.3rem;
+                align-self: end;
+
+                >i {
+                    color: #fff;
+
+                    &:hover {
+                        color: #d6d6d6;
+                    }
+                }
+              }
+            }
     }
-
 }
+

@@ -16,9 +16,9 @@ const Header = ( {user, setUser, loginWindow, setLoginWindow }) => {
                 <div>
                 <a href='/'>
                     <img 
-                        src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" 
+                        src="https://loodibee.com/wp-content/uploads/Netflix-N-Symbol-logo.png" 
                         alt="Netflix" 
-                        height='35'
+                        height='70'
                         wigth='112'
                     />
                 </a>

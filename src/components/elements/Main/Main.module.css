@@ -74,9 +74,13 @@
   width: 50%;
   padding: 5rem 0 5rem 1rem;
 }
+.wrapper .info button {
+  margin-right: 1rem;
+}
 .wrapper .info h1 {
   color: #fff;
   font-size: 3em;
+  margin-left: 0;
 }
 .wrapper .info .additional {
   display: flex;
@@ -109,6 +113,10 @@
   justify-content: start;
   flex-direction: column;
 }
+.wrapper .episodes h1 {
+  color: #fff;
+  font-size: 3em;
+}
 .wrapper .episodes .movieLogo {
   padding-left: 1rem;
 }
@@ -128,6 +136,10 @@
 .wrapper .episodes .swiper {
   width: 100%;
   margin: 0 auto;
+}
+.wrapper .episodes .swiper .episodeItem:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.95);
 }
 .wrapper .episodes .swiper > img {
   position: relative;

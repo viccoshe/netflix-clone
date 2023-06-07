@@ -6,11 +6,28 @@ import {DATA} from "../../../../data";
 import Button from "../../../UI/Button/Button";
 import { Swiper, SwiperSlide, useSwiperSlide} from 'swiper/react';
 import { Navigation, Mousewheel} from 'swiper';
+import { addToFavourites, toggleFavourites } from "../../../../utiles";
 
 
 const Popular = () => {
     const  [popularMovies, setPopularMovies ] = useState([]);
     const navigation = useNavigation();
+    const [ favs, setFavs ] = useState(JSON.parse(localStorage.getItem('favourites')));
+
+    const toggleFav = ( movie ) => {
+        toggleFavourites( movie );
+
+        if(favs.length !== 0){
+            if(favs.length > 0 && favs.some((item, i) => item[0] === movie.id)){
+                setFavs(favs.filter(i => i[0] !== movie.id))
+            }else{
+                setFavs([...favs, [movie.id]])
+            } 
+        }else{
+            setFavs([...favs, [movie.id]])
+        }
+        console.log(favs)
+    }
     //const data = useLoaderData();
     let data = DATA;
 
@@ -46,36 +63,34 @@ const Popular = () => {
                 </div>
             : ''
             }
-            <h1>Top rated</h1>
+            <h2>Top rated</h2>
                 <div className={styles.trendWrapper}>
                 <Swiper modules={[Navigation, Mousewheel]}
-                                            spaceBetween={50}
+                                            spaceBetween={35}
                                             slidesPerView={4}
                                             navigation
                                             mousewheel
-                                    >
+                                            
+                >
                     {popularMovies.length > 0 
                     ?
                     popularMovies.map((movie, i) => {
-                            return <div 
+                            return <SwiperSlide  
                                         className={styles.trendItem} 
                                         style={{ backgroundImage: `url(${movie.mainImage})` }}>
-                                    <SwiperSlide>
-                                            <img 
-                                                key={movie.id} 
-                                                style={{ width: '100%', borderRadius: '2%'}} 
-                                                src={movie.mainImage} 
-                                                alt={movie.name}>
-                                            </img>
-                                            <span><i className='bx bxl-imdb bx-md'></i>{popularMovies[0].rating}</span>
-                                            <h6>{movie.name}</h6>
-                                            <span>{movie.rate}</span>
-                                            <button><i className='bx bx-bookmark-plus bx-md'></i></button>
-                                    </SwiperSlide>
-
+                                                <span className={styles.trendRate}><i className='bx bxs-star bx-xs'></i>{popularMovies[0].rating}</span>
+                                                <Link to={"/" + i}>
+                                                     {movie.alternativeName ? movie.alternativeName : movie.name}
+                                                </Link>  
+                                                <span className={styles.year}>{movie.year}</span>
+                                                <button onClick={() => toggleFav(movie)}>
+                                                    {favs && favs.length > 0 && favs.some((item, i) => item[0] === movie.id ) 
+                                                    ?  <i className='bx bxs-bookmark-minus bx-sm'></i>
+                                                    :  <i className='bx bx-bookmark-plus bx-sm'></i>
+                                                    }
+                                                </button>
+                                        </SwiperSlide>
                                     
-
-                                    </div>
                             
                             
                             
@@ -87,7 +102,7 @@ const Popular = () => {
                                     // </li>
                     })
                     :
-                    <li>There is no such thing as popular</li>                   
+                    ''                   
                     }
                 </Swiper>
                 </div>

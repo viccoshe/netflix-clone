@@ -82,6 +82,7 @@
 		h1 {
 			color: #fff;
 			font-size: 3em ;
+			margin-left: 0;
 		}
 
 		.additional {
@@ -149,6 +150,13 @@
 			width: 100%;
 			margin: 0 auto;
 
+			.episodeItem {
+				 &:hover {
+					transition: all .2s ease-in-out;
+					transform: scale(0.95);
+				}
+			}
+
 			>img{
 				position: relative;
 			}
@@ -160,6 +168,7 @@
 				right: 41%;
 				color: #000000c5;
 				text-shadow: 0 0 10px #ffffff61, 1px 0px 5px rgba(255, 255, 255, 0.32);
+				
 			}
 		}
 		

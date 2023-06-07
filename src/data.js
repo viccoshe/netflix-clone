@@ -76,6 +76,7 @@ export const DATA = [
 		rate: 5.6,
 		mainImage: bg,
 		year: 2019,
+		genres: ['action', 'боевик', 'комедия'],
 		limitAge: '12+',
 		rating: '7.89',
 		filmLength: '1h 56min',
@@ -98,6 +99,7 @@ export const DATA = [
 	
 		mainImage: bg,
 		year: 2019,
+		genres: ['action', 'фантастика', 'комедия'],
 		rate: 9.6,
 		limitAge: '12+',
 		rating: '7.89',

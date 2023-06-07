@@ -24,7 +24,11 @@ const Profile = ( { loginWindow, setLoginWindow, user, setUser }) => {
                             alt={user.name} 
                         />
                     :   <img  
-                            src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/06/28/14/avatar.jpg?width=50'" 
+                    style={{ width: '100%',
+                        backgroundColor: '#9b9a97'
+                            
+                            }}
+                            src="https://www.pngmart.com/files/21/Account-Avatar-Profile-PNG-Photo.png" 
                             alt="avatar" 
                         />
                    }

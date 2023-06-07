@@ -1,0 +1,118 @@
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+h1 {
+  color: #9b9a97;
+  margin: 2rem 3.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.watchlist {
+  color: #9b9a97;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.watchlist .item {
+  height: 78%;
+  width: 90%;
+  align-items: center;
+  display: flex;
+  flex-flow: row;
+  margin: 1rem;
+  border: 1px solid #242424;
+  border-radius: 23px;
+  background-image: linear-gradient(to right, #0f1011, #131314, #161617, #191919, #1c1c1c);
+  transition: background-image 5s ease-out;
+}
+.watchlist .item:hover {
+  background-image: linear-gradient(to right, #151718, #131314, #161617, #191919, #1e1d1d);
+}
+.watchlist .item button {
+  align-self: flex-start;
+  border: none;
+  background-color: transparent;
+}
+.watchlist .item button > i {
+  cursor: pointer;
+  margin-top: 1rem;
+  color: #9b9a97;
+}
+.watchlist .item button > i:hover {
+  color: #515151;
+}
+.watchlist .item .itemImg {
+  width: 16rem;
+  height: 16rem;
+  margin: 1rem 2rem 1rem 1rem;
+  border-radius: 10px;
+}
+.watchlist .item .itemImg img {
+  height: 16rem;
+  width: 16rem;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.watchlist .item .itemDetails {
+  margin-top: 2.5rem;
+  align-self: flex-start;
+  width: 70%;
+}
+.watchlist .item .itemDetails > :last-child {
+  margin-top: 1rem;
+}
+.watchlist .item .itemDetails div span {
+  color: #fff;
+}
+.watchlist .item .itemDetails a {
+  font-size: 2.5em;
+  color: #9b9a97;
+  font-weight: 600;
+}
+.watchlist .item .itemDetails a:hover {
+  color: #515151;
+}
+.watchlist .item .itemDetails .genres {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  margin: 1rem 0;
+}
+.watchlist .item .itemDetails .genres span {
+  margin-right: 1rem;
+}
+.watchlist .item .itemDetails .genres > * {
+  color: #fff;
+  text-align: center;
+  background-color: rgba(107, 107, 107, 0.4666666667);
+  border-radius: 5px;
+  width: 4rem;
+  padding: 0.3rem;
+}
+.watchlist .item .itemDetails .genres > * i {
+  margin-right: 3px;
+  color: rgb(240, 220, 3);
+}
+.watchlist .emptyList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+.watchlist .emptyList i {
+  font-size: 80px;
+  margin-bottom: 1rem;
+}
+.watchlist .emptyList span {
+  font-size: 20px;
+}/*# sourceMappingURL=Watchlist.module.css.map */

@@ -1,9 +1,173 @@
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .popular {
   color: white;
+  margin: 0 3rem 3rem;
+}
+.popular h1 {
+  font-size: 3.5em;
+  margin-bottom: 1rem;
+  margin-left: 0;
+}
+.popular .popularBlock {
+  padding: 3rem;
+  border-radius: 10px;
+  width: 85%;
+  height: 19rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.popular .popularBlock::before {
+  content: "";
+  background-image: linear-gradient(to right bottom, #0f1011, transparent);
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
-.popular ul li {
-  font-size: 20px;
-  color: white;
+.popular .popularBlock * {
+  z-index: 2;
+  position: inherit;
+}
+.popular .popularBlock > :first-child {
+  width: 3rem;
+  height: 1.5rem;
+  background-color: #b51313;
+  text-align: center;
+  border-radius: 5px;
+}
+.popular .popularBlock h1 {
+  color: #e3e3e3;
+}
+.popular .popularBlock .rate {
+  display: flex;
+  flex-flow: nowrap row;
+  justify-content: start;
+  width: 100%;
+  margin: 1rem 0;
+}
+.popular .popularBlock .rate > :first-child {
+  margin-right: 4rem;
+}
+.popular .popularBlock .rate > span {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(1, 1, 1, 0.274);
+  border-radius: 5px;
+  width: 7rem;
+  padding: 0.1rem 0.8rem;
+  font-weight: 600;
+}
+.popular .popularBlock .rate > span i {
+  margin-right: 3px;
+  color: rgb(247, 206, 0);
+}
+.popular .popularBlock button {
+  margin-top: 2rem;
+  background-color: #b51313;
+  border: none;
+  padding: 1rem 1rem;
+  border-radius: 15px;
+  position: relative;
+  transition: 0.3s;
+  background-color: #b51313;
+}
+.popular .popularBlock button a {
+  color: #e3e3e3;
+}
+.popular .popularBlock button:hover {
+  background-color: #700b0b;
+}
+.popular h2 {
+  margin-top: 3rem;
+  color: #9b9a97;
+}
+.popular .trendWrapper {
+  color: #9b9a97;
+}
+.popular .trendWrapper .trendItem {
+  position: relative;
+  border-radius: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 16rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-flow: wrap column;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.popular .trendWrapper .trendItem:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.96);
+}
+.popular .trendWrapper .trendItem::before {
+  content: "";
+  background-image: linear-gradient(to right, rgba(15, 16, 17, 0.6705882353), transparent);
+  width: 170%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.popular .trendWrapper .trendItem * {
+  z-index: 2;
+}
+.popular .trendWrapper .trendItem .trendRate {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5647058824);
+  border-radius: 10px;
+  margin: 0.5rem;
+  padding: 4px;
+}
+.popular .trendWrapper .trendItem .trendRate > i {
+  color: rgb(247, 206, 0);
+  margin-right: 3px;
+}
+.popular .trendWrapper .trendItem > a {
+  margin: 3rem 0 0 1rem;
+  color: #e3e3e3;
+  font-weight: 600;
+  font-size: 29px;
+}
+.popular .trendWrapper .trendItem > a:hover {
+  color: #9b9a97;
+}
+.popular .trendWrapper .trendItem .year {
+  margin-left: 1rem;
+  color: #cdcdcd;
+  font-weight: 600;
+  font-size: 17px;
+}
+.popular .trendWrapper .trendItem button {
+  background: rgba(155, 154, 151, 0.3411764706);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  padding: 0.5rem;
+  justify-self: end;
+  margin: 1.3rem;
+  align-self: end;
+}
+.popular .trendWrapper .trendItem button > i {
+  color: #fff;
+}
+.popular .trendWrapper .trendItem button > i:hover {
+  color: #d6d6d6;
 }/*# sourceMappingURL=Popular.module.css.map */

@@ -35,11 +35,10 @@ const Episodes = ( {movie} ) => {
                     mousewheel
                     >
                         {movie?.photos
-                        
                         ?
                         movie.photos.map((photo, id) =>(
-                            <SwiperSlide>
-                                <div>
+                            <SwiperSlide >
+                                <div className={styles.episodeItem}>
                                     <img 
                                         key={id} 
                                         style={{ width: '100%', borderRadius: '2%'}} 
