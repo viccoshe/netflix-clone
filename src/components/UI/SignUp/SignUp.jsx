@@ -1,7 +1,8 @@
 import Button from "../Button/Button";
 import { registerUser } from "../../../utiles";
 import { useState } from "react";
-import styles from "./../Login/Login.module.scss"
+import styles from "./../Login/Login.module.scss";
+import { motion } from "framer-motion";
 
 const SignUp = ({  signUp, setSignUp, loginWindow, setLoginWindow}) => {
     const [ email, setEmail ] = useState('');
@@ -16,7 +17,12 @@ const SignUp = ({  signUp, setSignUp, loginWindow, setLoginWindow}) => {
 
     return (
         <div>
-            <div className={styles.form}>
+            <motion.div 
+                className={styles.form}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+            >
                 <h2>Sign Up</h2>
                 <form onSubmit={signUpNewUser}>
                     <label>Email</label>
@@ -38,7 +44,7 @@ const SignUp = ({  signUp, setSignUp, loginWindow, setLoginWindow}) => {
                     </div>
 
                 </form>
-            </div>   
+            </motion.div>   
             
         </div>
      );

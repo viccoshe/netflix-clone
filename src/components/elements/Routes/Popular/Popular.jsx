@@ -7,6 +7,7 @@ import Button from "../../../UI/Button/Button";
 import { Swiper, SwiperSlide, useSwiperSlide} from 'swiper/react';
 import { Navigation, Mousewheel} from 'swiper';
 import { addToFavourites, toggleFavourites } from "../../../../utiles";
+import { motion } from "framer-motion";
 
 
 const Popular = () => {
@@ -43,12 +44,20 @@ const Popular = () => {
         return <h1>Loading...</h1>
     }
     return ( 
-        <div className={styles.popular}>
+        <div className={styles.popular}
+
+        >
             {popularMovies.length > 0 ?
                 <div className={styles.popularBlock}
                      style={{ backgroundImage: `url(${popularMovies[0].mainImage})` }}>
                     <div>
-                        <div>NEW</div>
+                        <motion.div ///////////////////
+                        initial={{ rotate: 0}}
+                            //animate={{  }}
+                            whileHover={{ rotate: '200'  }}
+                        >
+                            NEW
+                        </motion.div>
                         <h1>{popularMovies[0].name}</h1>
                         <div className={styles.rate}>
                             <span><i className='bx bxl-imdb bx-md'></i>{popularMovies[0].rating}</span>
@@ -56,9 +65,13 @@ const Popular = () => {
                         </div>
                         {console.log(popularMovies[0]) }
 
-                        <Button> 
-                            <Link to={"/" + 0 }>Watch</Link>
-                        </Button>
+                        <Link to={"/" + 0 }>
+                            <motion.button 
+                                initial={{ scale: 1}}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ backgroundColor: '#700b0b'}}
+                            >Watch</motion.button>
+                        </Link>
                     </div>
                 </div>
             : ''

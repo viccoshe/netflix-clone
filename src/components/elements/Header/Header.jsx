@@ -4,6 +4,7 @@ import Profile from "./Profile";
 import { DATA } from '../../../data';
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Header = ( {user, setUser, loginWindow, setLoginWindow }) => {
     const data = DATA;
@@ -34,7 +35,13 @@ const Header = ( {user, setUser, loginWindow, setLoginWindow }) => {
             
                 {query
                 ?
-                <div className={styles.query}>
+                <motion.div 
+                    className={styles.query}
+                    initial={{ scale: 0}}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.2 }}
+                    animate={{ boxShadow: "3px 1px 58px 14px rgba(0, 0, 0, 0.215)" }}
+                >
                     <ul>
                     {data.some((m) => m.name.toLowerCase().includes(query))
                     ?
@@ -50,7 +57,7 @@ const Header = ( {user, setUser, loginWindow, setLoginWindow }) => {
                                 ))                                  
                         : <li>No such results</li>}
                     </ul>
-                </div> 
+                </motion.div> 
                 :
                 '' }  
             

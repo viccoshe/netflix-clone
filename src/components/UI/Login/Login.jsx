@@ -3,6 +3,7 @@ import SignUp from "../SignUp/SignUp";
 import styles from "./Login.module.scss";
 import Button from "../Button/Button";
 import { singInUser, signOutUser, logInViaGoogle }from "./../../../utiles/index";
+import { motion } from "framer-motion";
 
 
 const Login = ({ signUp, setSignUp, loginWindow, setLoginWindow}) => {
@@ -16,7 +17,11 @@ const Login = ({ signUp, setSignUp, loginWindow, setLoginWindow}) => {
     }
 
     return ( 
-        <div className={styles.wrapper}>
+        <motion.div className={styles.wrapper}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+        >
             <div className={styles.login}>
                 <i  
                     onClick={() => setLoginWindow(!loginWindow)}
@@ -27,7 +32,12 @@ const Login = ({ signUp, setSignUp, loginWindow, setLoginWindow}) => {
 
                 {!signUp 
                 ?
-                    <div className={styles.form}>
+                    <motion.div 
+                        className={styles.form}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.6 }}
+                    >
                         <h2>Welcome back</h2>
                         <form onSubmit={logInNewUser}>
                             <label>Email</label>
@@ -44,14 +54,12 @@ const Login = ({ signUp, setSignUp, loginWindow, setLoginWindow}) => {
                             />
                             <div className={styles.newAccBtns}>
                                 <span>New to <b>Netflix?</b></span>
-                                <div onClick={() => setSignUp(!signUp)}>Create an account.</div> 
+                                <div 
+                                    onClick={() => setSignUp(!signUp)}>Create an account.</div> 
                             </div>  
-
-
-                            <button className={styles.signInBtn}type="submit">Sign In</button>
+                            <button className={styles.signInBtn} type="submit">Sign In</button>
                         </form>
-                        
-                    </div>   
+                    </motion.div>   
                 :
                 <SignUp signUp={signUp} 
                         setSignUp={setSignUp}
@@ -68,7 +76,7 @@ const Login = ({ signUp, setSignUp, loginWindow, setLoginWindow}) => {
                 </button>
                 {/* <Button cb={ () => signOutUser() } style={{border: "1px solid red"}}>LOG OUT</Button> */}
             </div>            
-        </div>
+        </motion.div>
 
      );
 }

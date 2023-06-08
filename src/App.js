@@ -8,7 +8,7 @@ import Films from "./components/elements/Routes/Films/Films";
 import Sidebar from "./components/UI/Sidebar/Sidebar";
 import { useEffect, useState, createContext } from "react";
 import styles from "./App";
-import { useRouteError} from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import ErrorPage from "./components/UI/ErrorPage/ErrorPage";
 import { getApi } from "./data";
 import { dataLoader } from "./data";
@@ -16,6 +16,7 @@ import NotFoundPage from "./components/elements/Routes/NotFoundPage/NotFoundPage
 import Login from "./components/UI/Login/Login";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./utiles";
+import { AnimatePresence } from 'framer-motion';
 
 
 
@@ -23,6 +24,7 @@ export const DataContext = createContext();
 
 function App() {
   const [data, setData] = useState([]);
+  //const location = useLocation();
 
 
   // useEffect(() => {
@@ -32,6 +34,7 @@ function App() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
+      
       <Route path="/" element={<Root />}>
         <Route index element={<Popular />} /> 
         <Route path="/:id" element={<Main/>} />
@@ -40,15 +43,20 @@ function App() {
         <Route path="/films" element={<Films/>} />
         <Route path="*" element={<NotFoundPage/>}/>
       </Route>
+
+
     )
   )
   ////loader={dataLoader} верни все ладеры
 
   return (
     <div>
-    <DataContext.Provider value={{data}}>
-      <RouterProvider router={router}/>      
-       </DataContext.Provider>
+      <AnimatePresence>
+        <DataContext.Provider value={{data}}>
+          <RouterProvider router={router}/>      
+        </DataContext.Provider>        
+      </AnimatePresence>
+
 
     </div>
   );
@@ -62,6 +70,7 @@ const Root = () => {
   const [loginWindow, setLoginWindow] = useState(true);
   const [signUp, setSignUp] = useState(false);
   const [user, setUser] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     if(!user || user === null){

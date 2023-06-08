@@ -79,8 +79,9 @@
                 }
             }
         }
-
-        button {
+        a {
+            
+            button {
             margin-top: 2rem;
             background-color: $red;
             border: none;
@@ -89,14 +90,11 @@
             position: relative;
             transition: 0.3s;
             background-color: $red;
+            width: 7rem; 
+            color: #fff;
 
-            a {
-                color: #e3e3e3;           
-            }
-            &:hover {
-                background-color: $darkRed;
-            }
         }
+    }
         
 
     }

@@ -3,6 +3,7 @@ import styles from './Header.module.scss';
 import { useState } from 'react';
 import { signOutUser } from '../../../utiles';
 import Button from '../../UI/Button/Button';
+import { motion } from 'framer-motion';
 
 const Profile = ( { loginWindow, setLoginWindow, user, setUser }) => {
     const [activeDropdown, setActiveDropdown] = useState(false);
@@ -36,7 +37,13 @@ const Profile = ( { loginWindow, setLoginWindow, user, setUser }) => {
                 </div>
                 {activeDropdown ? <i className="bx bx-caret-down"></i> : <i className="bx bx-caret-up"></i>}
                 {activeDropdown ?
-                    <div className={styles.dropdown}>
+                    <motion.div 
+                        className={styles.dropdown}
+                        initial={{ scale: 0}}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.2 }}
+                        animate={{ boxShadow: "3px 1px 58px 14px rgba(0, 0, 0, 0.215)" }}
+                    >
                         {user && user !== null
                         ?  <>
                             <Link to="/watchlist">Watchlist</Link>
@@ -49,7 +56,7 @@ const Profile = ( { loginWindow, setLoginWindow, user, setUser }) => {
                             </>
                         }
 
-                    </div>
+                    </motion.div>
                 :   null
                 }
             </div>
