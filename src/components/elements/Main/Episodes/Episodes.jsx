@@ -1,14 +1,24 @@
 import styles from "./../Main.module.scss";
-import { Swiper, SwiperSlide, useSwiperSlide} from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiperSlide, useSwiper} from 'swiper/react';
 import { Navigation, Mousewheel} from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/mousewheel';
 import { DATA} from "./../../../../data";
+import { useState } from "react";
+import ModalImage from "../../../UI/ModalImage/ModalImage";
 
 const Episodes = ( {movie} ) => {
+    const [ popup, setPopup ] = useState(false);
+    const [ photoUrl, setPhotoUrl ] = useState('');
 
     const swiperSlide = useSwiperSlide();
+    const swiper = useSwiper();
+
+    const getPopup = ( photo ) => {
+        setPhotoUrl(photo);
+        setPopup(!popup);
+    }
 
     return (
         <div className={styles.episodes}>
@@ -33,14 +43,16 @@ const Episodes = ( {movie} ) => {
                     slidesPerView={4}
                     navigation
                     mousewheel
+
                     >
                         {movie?.photos
                         ?
                         movie.photos.map((photo, id) =>(
-                            <SwiperSlide >
-                                <div className={styles.episodeItem}>
+                            <SwiperSlide key={id}>
+                                <div onClick={() => getPopup(photo)} 
+                                     className={styles.episodeItem}
+                                >
                                     <img 
-                                        key={id} 
                                         style={{ width: '100%', borderRadius: '2%'}} 
                                         src={photo} 
                                         alt={movie.name}>
@@ -51,10 +63,12 @@ const Episodes = ( {movie} ) => {
                         ))
                         : 
                         DATA[0].photos.map((photo, id) =>(
-                            <SwiperSlide>
-                                <div>
+                            <SwiperSlide key={id}>
+                                <div onClick={() => getPopup(photo)} 
+                                    className={styles.episodeItem}
+                                >
                                     <img 
-                                        key={id} 
+
                                         style={{ width: '100%', borderRadius: '2%'}} 
                                         src={photo} 
                                         alt={movie.name}>
@@ -66,7 +80,12 @@ const Episodes = ( {movie} ) => {
                     }      
             </Swiper>
             </div>
-            
+            {popup  
+            ? <ModalImage   popup={ popup } 
+                            setPopup={ setPopup }
+                            photoUrl={photoUrl} 
+                />
+            : ''}
         </div>
      );
 }

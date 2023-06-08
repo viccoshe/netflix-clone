@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 const Header = ( {user, setUser, loginWindow, setLoginWindow }) => {
     const data = DATA;
     const [ query, setQuery ] = useState('');
-    console.log(user)
     
     return (
         <>
@@ -32,28 +31,29 @@ const Header = ( {user, setUser, loginWindow, setLoginWindow }) => {
                     
                  />      
             </div>  
-            <div className={styles.query}>
+            
                 {query
                 ?
                 <div className={styles.query}>
                     <ul>
-                        {data.filter((movie) => 
-                            movie.name.toLowerCase().includes(query)
-                        ).map((movie, i) => (
-                            <li key={i}>
-                                <Link  to={"/" + i}>
-                                    {movie.name}
-                                </Link>
-                            </li>
-
-                        ))}
+                    {data.some((m) => m.name.toLowerCase().includes(query))
+                    ?
+                        data.filter((movie) => 
+                            movie.name.toLowerCase().includes(query) 
+                                ).map((movie, i) => (
+                                    <li key={i}>
+                                        <Link  to={"/" + i}>
+                                            <span>{movie.name}</span>
+                                            <span>{movie.year}</span>
+                                        </Link>
+                                    </li>
+                                ))                                  
+                        : <li>No such results</li>}
                     </ul>
-
-                    
                 </div> 
                 :
                 '' }  
-            </div>
+            
     
         </>
 

@@ -1,0 +1,49 @@
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.521);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+
+    .modalImage {
+        padding: 2rem;
+        position: relative;
+        border-radius: 10px;
+        background-color: #0f1011;
+        width: 50vw;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: wrap column;
+
+        >i {
+            cursor: pointer;
+            color: rgb(155, 154, 151);
+            font-size: 36px;
+            display: block;
+            margin-right: 0 auto;
+            padding: 1rem;
+            position: sticky;
+            top: 14%;
+            left: 29%;
+            align-self: end;
+        }
+
+        .photo {
+            width: 560px;
+            height: 315px;
+            z-index: 3;
+
+            img {
+                width: 100%;
+                z-index: 3;
+            }
+        }
+    }
+}

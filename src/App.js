@@ -72,7 +72,6 @@ const Root = () => {
               name: user?.displayName,
               photo: user?.photoURL,
               notifications: null
-
             }
             setUser(currentUser);
           } else {

@@ -111,13 +111,48 @@
 }
 
 .query {
+    display: none;
     position: absolute;
-    width: 222px;
-    height: 141px;
+    width: 191px;
+   // height: 141px;
     color: white;
     font-size: 16px;
-    border: 1px solid red;
+    border: 1px solid rgba(155, 154, 151, 0.4);
     top: 54px;
     left: 239px;
     z-index: 2;
+    background: #000;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0 0 30px 30px;
+
+    > ul {
+        text-decoration: none;
+        list-style: none;
+        color: $gray;
+        li {
+            padding: 5px 0;
+
+            a {
+                font-style: 15px;
+                color: $gray;
+
+
+                :last-child {
+                    font-size: 10px;
+                }
+
+                span {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                &:hover {
+                    color: #ae1d1d;
+                }
+
+            }
+        }
+    }
 }

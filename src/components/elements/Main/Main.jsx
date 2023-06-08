@@ -27,7 +27,7 @@ const Main = () => {
             >
                 {activeTab === 1 ? (
                    <Information 
-                        movie={ data[`${id}`]}   //movie={ data[`${id}`]} 
+                        movie={ data[`${id}`]}
                         openVideo={ openVideo } 
                         setOpenVideo={ setOpenVideo } 
                     /> 

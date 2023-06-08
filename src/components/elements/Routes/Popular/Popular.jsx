@@ -75,7 +75,8 @@ const Popular = () => {
                     {popularMovies.length > 0 
                     ?
                     popularMovies.map((movie, i) => {
-                            return <SwiperSlide  
+                            return <SwiperSlide 
+                                        key={movie.id} 
                                         className={styles.trendItem} 
                                         style={{ backgroundImage: `url(${movie.mainImage})` }}>
                                                 <span className={styles.trendRate}><i className='bx bxs-star bx-xs'></i>{popularMovies[0].rating}</span>
