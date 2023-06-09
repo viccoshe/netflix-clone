@@ -7,16 +7,20 @@
 	background-color: transparent;
 	outline: none;
 	font-size: 18px;
-	//margin-right: 2rem;
 	color: $gray;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	width: 170px;
+	transition: background-color 1s ease-in-out;
 
 	&:hover {
 		background-color: #00000056;
 		border: 1px solid rgba(255, 255, 255, 0.468);
+	}
+
+	&:active {
+		border: 1px solid $darkRed;
 	}
 
 	> i {

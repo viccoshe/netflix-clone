@@ -6,7 +6,7 @@
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 0;
 
 	> button {
 		opacity: 0.8;
@@ -19,6 +19,7 @@
 		color: #fff;
 		background-color: transparent;
 		margin: 0 1rem;
+		transition: border-color 0.8s ease-in-out;
 
 		&.active {
 			border-color: #c62e21;

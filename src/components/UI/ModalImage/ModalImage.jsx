@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import styles from "./Modalimage.module.scss";
+import { motion } from "framer-motion";
 
 const ModalImage = ({ popup, setPopup, photoUrl}) => {
 
@@ -10,8 +11,11 @@ const ModalImage = ({ popup, setPopup, photoUrl}) => {
     }, [popup])
     
     return ( 
-        <>
-            <div 
+        <div>
+            <motion.div 
+                initial={{ opacity: 0}}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4}}
             className={styles.modal}
             onClick={() => setPopup(!popup)}
             >
@@ -29,8 +33,8 @@ const ModalImage = ({ popup, setPopup, photoUrl}) => {
                         <img src={photoUrl}/>
                     </div>
                 </div>
-            </div>
-        </>
+            </motion.div>
+        </div>
      );
 }
  

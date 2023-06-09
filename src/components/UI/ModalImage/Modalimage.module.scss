@@ -21,6 +21,7 @@
         align-items: center;
         justify-content: center;
         flex-flow: wrap column;
+        z-index: 3;
 
         >i {
             cursor: pointer;
@@ -39,10 +40,10 @@
             width: 560px;
             height: 315px;
             z-index: 3;
-
+            margin-bottom: 1rem;
+            
             img {
                 width: 100%;
-                z-index: 3;
             }
         }
     }

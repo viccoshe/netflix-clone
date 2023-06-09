@@ -3,6 +3,7 @@ import { DATA } from "./../../../../data";
 import styles from "./Watchlist.module.scss";
 import { removeFromFavourites } from "../../../../utiles";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const Watchlist = () => {
    //const data = useLoaderData();
@@ -24,15 +25,23 @@ const Watchlist = () => {
 
 
     return ( 
-      <>
+      <motion.div
+            initial={{ opacity: 0}}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4}}
+      >
             <h1>Your watchlist</h1>
             <div className={styles.watchlist}>
-                  {favourites.length > 0 && data.length > 0
+                  {favourites && favourites.length > 0 && data.length > 0
                   ?
                   data.map((movie, i) => {
                         if (favourites.length > 0  && favourites.some((item, i) => item[0] === movie.id)){
-                              return  <div key={movie.id}
-                                           className={styles.item}>
+                              return  <motion.div key={movie.id}
+                                           className={styles.item}
+                                           initial={{ scale: 1 }}
+                                           whileHover={{ scale: 1.01 }}
+                                           transition={{ duration: 0.1 }}
+                                      >
                               <div className={styles.itemImg}>
                                     <img src={movie.mainImage} alt={movie.name} />   
                               </div>
@@ -50,21 +59,25 @@ const Watchlist = () => {
                                     <div>{movie.shortDescription}</div>
                               </div>
                               <button onClick={() => removeFav(movie)}><i className='bx bx-message-square-x bx-sm'></i></button>
-                        </div>
+                        </motion.div>
                   
                         }
 
                   })
                         
                   :
-                  <div className={styles.emptyList}>
-                        <i className='bx bx-ghost'></i>
+                  <div 
+                        className={styles.emptyList}
+                  >
+                        <i 
+                              className='bx bx-ghost'
+
+                        ></i>
                         <span>Add something to your watchlist</span>                  
                   </div>
-
                   }
             </div>      
-      </>
+      </motion.div>
       
 
      );

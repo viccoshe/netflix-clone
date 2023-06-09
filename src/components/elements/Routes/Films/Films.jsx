@@ -6,6 +6,7 @@ import { Navigation, Mousewheel} from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/mousewheel';
+import { motion } from "framer-motion";
 
 const Films = () => {
     let data = DATA;
@@ -22,11 +23,15 @@ const Films = () => {
                     'action'];
 
     return ( 
-        <>
+        <motion.div
+            initial={{ opacity: 0}}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4}}
+        >
             <h1>Trending movies</h1>
             <div className={styles.filmsWrapper}>
-                {genres.length && genres.map((gen) => {
-                    return <div className={styles.filmsCategory}>
+                {genres.length && genres.map((gen, i) => {
+                    return <div key={gen.i} className={styles.filmsCategory}>
                             <div className={styles.catBlock}>
                                 <h4>{gen}</h4>
                 
@@ -39,9 +44,10 @@ const Films = () => {
                                     >
                                         {data.map((movie, i) => {
                                             if(movie.genres.some((item) => item === gen.toLowerCase())){
-                                                return <SwiperSlide  className={styles.filmItem}
-                                                                    style={{ backgroundImage: `url(${movie.mainImage})`}}
-                                                                    key={movie.id}
+                                                return <SwiperSlide  
+                                                            className={styles.filmItem}
+                                                            style={{ backgroundImage: `url(${movie.mainImage})`}}
+                                                            key={movie.id}
                                                         >
                                                             <Link to={"/" + i}>
                                                                     {movie.alternativeName ? movie.alternativeName : movie.name}
@@ -55,7 +61,7 @@ const Films = () => {
                             </div>
                 })}
             </div>
-        </>
+        </motion.div>
      );
 }
  

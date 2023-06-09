@@ -17,7 +17,8 @@ const Sidebar = ({ isSidebarShow, setIsSidebarShow  }) => {
             <button onClick={() => setIsSidebarShow(!isSidebarShow)}>
                 <i className={`bx bx-${isSidebarShow ? 'x' : 'align-left'}`}></i>
             </button>
-            <ul className={isSidebarShow ? styles.show : ''}>
+            <ul
+                className={isSidebarShow ? styles.show : ''}>
                 {menu.map((title, i) => (title === "Popular" 
                     ? <li key={i}><Link>{title}</Link></li> 
                     : <li key={title}>

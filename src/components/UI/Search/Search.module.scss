@@ -9,6 +9,7 @@
 	border: 1px solid rgba($gray, 0.4);
 	padding: 0.5rem 1rem;
 	z-index: 3;
+	width: 13rem;
 
 	> div {
 		display: flex;
@@ -21,6 +22,7 @@
 		color: #fff;
 		margin-left: 0.5rem;
 		border: none;
+
 		&::placeholder {
 			color: $gray;
 		}
@@ -29,5 +31,10 @@
 	i {
 		color: $gray;
 		font-size: 20px;
+		transition: color 0.5s ease-in-out;
+            
+		&:hover {
+			color: $darkRed;
+		}
 	}
 }

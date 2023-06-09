@@ -7,6 +7,7 @@ import 'swiper/scss/mousewheel';
 import { DATA} from "./../../../../data";
 import { useState } from "react";
 import ModalImage from "../../../UI/ModalImage/ModalImage";
+import { motion } from "framer-motion";
 
 const Episodes = ( {movie} ) => {
     const [ popup, setPopup ] = useState(false);
@@ -21,7 +22,12 @@ const Episodes = ( {movie} ) => {
     }
 
     return (
-        <div className={styles.episodes}>
+        <motion.div 
+            initial={{ opacity: 0}}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4}}
+            className={styles.episodes}
+        >
              <h1>{movie.name}</h1>
             {/* <img className={styles.movieLogo}
                 src={movie.logo}
@@ -38,7 +44,7 @@ const Episodes = ( {movie} ) => {
             <div className={styles.swiper}>
 
             <Swiper
-                modules={[Navigation, Mousewheel]}
+                    modules={[Navigation, Mousewheel]}
                     spaceBetween={50}
                     slidesPerView={4}
                     navigation
@@ -68,7 +74,6 @@ const Episodes = ( {movie} ) => {
                                     className={styles.episodeItem}
                                 >
                                     <img 
-
                                         style={{ width: '100%', borderRadius: '2%'}} 
                                         src={photo} 
                                         alt={movie.name}>
@@ -86,7 +91,7 @@ const Episodes = ( {movie} ) => {
                             photoUrl={photoUrl} 
                 />
             : ''}
-        </div>
+        </motion.div>
      );
 }
  

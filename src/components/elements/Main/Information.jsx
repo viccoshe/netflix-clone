@@ -1,7 +1,7 @@
 import styles from './Main.module.scss';
 import Button from '../../UI/Button/Button';
 import { addToFavourites } from '../../../utiles';
-
+import { motion } from 'framer-motion';
 
 const Information = ({ movie, openVideo, setOpenVideo }) => {
     const { alternativeName: name, 
@@ -10,7 +10,11 @@ const Information = ({ movie, openVideo, setOpenVideo }) => {
 
 
     return ( 
-    <div className={styles.info}>
+    <motion.div 
+        initial={{ opacity: 0}}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4}}
+        className={styles.info}>
         <h1>{name}</h1>
 			{/* <img найди лого
 				src={logo}
@@ -37,7 +41,7 @@ const Information = ({ movie, openVideo, setOpenVideo }) => {
                 <span>My list</span>
             </Button>
         </div>
-    </div>);
+    </motion.div>);
 }
  
 export default Information;

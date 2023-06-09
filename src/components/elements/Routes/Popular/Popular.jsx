@@ -44,20 +44,17 @@ const Popular = () => {
         return <h1>Loading...</h1>
     }
     return ( 
-        <div className={styles.popular}
+        <motion.div 
+            initial={{ opacity: 0}}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4}}
+            className={styles.popular}
 
         >
             {popularMovies.length > 0 ?
                 <div className={styles.popularBlock}
                      style={{ backgroundImage: `url(${popularMovies[0].mainImage})` }}>
-                    <div>
-                        <motion.div ///////////////////
-                        initial={{ rotate: 0}}
-                            //animate={{  }}
-                            whileHover={{ rotate: '200'  }}
-                        >
-                            NEW
-                        </motion.div>
+                    <div>NEW</div>
                         <h1>{popularMovies[0].name}</h1>
                         <div className={styles.rate}>
                             <span><i className='bx bxl-imdb bx-md'></i>{popularMovies[0].rating}</span>
@@ -68,12 +65,13 @@ const Popular = () => {
                         <Link to={"/" + 0 }>
                             <motion.button 
                                 initial={{ scale: 1}}
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ backgroundColor: '#700b0b'}}
+                                whileHover={{ scale: 1.1}}
+                                whileTap={{ backgroundColor: '#600a0a'}}
                             >Watch</motion.button>
                         </Link>
                     </div>
-                </div>
+           
+                
             : ''
             }
             <h2>Top rated</h2>
@@ -121,7 +119,7 @@ const Popular = () => {
                 </Swiper>
                 </div>
 
-        </div>
+        </motion.div>
      );
 }
  

@@ -17,15 +17,13 @@ import Login from "./components/UI/Login/Login";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./utiles";
 import { AnimatePresence } from 'framer-motion';
-
-
+import Footer from "./components/elements/Footer/Footer";
 
 export const DataContext = createContext();
 
 function App() {
   const [data, setData] = useState([]);
   //const location = useLocation();
-
 
   // useEffect(() => {
   //   getApi('https://dummyjson.com/products') //`https://kinopoiskapiunofficial.tech/api/v2.2/films`
@@ -121,6 +119,7 @@ const Root = () => {
                 />
             </div>
         </div>
+        <Footer />
 
 
     </>

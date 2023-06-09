@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import styles from "../../elements/Main/Main.module.scss";
+import { motion } from "framer-motion";
 
 const VideoPlayer = ( {movie, openVideo, setOpenVideo} ) => {
 
@@ -10,7 +11,10 @@ const VideoPlayer = ( {movie, openVideo, setOpenVideo} ) => {
     }, [openVideo])
     
     return ( 
-        <div 
+        <motion.div 
+            initial={{ opacity: 0}}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4}}
             className={styles.modal}
             onClick={() => setOpenVideo(!openVideo)}
         >
@@ -27,7 +31,7 @@ const VideoPlayer = ( {movie, openVideo, setOpenVideo} ) => {
             <iframe src={movie.trailer ? movie.trailer : "https://www.youtube.com/embed/6ZfuNTqbHE8"} title="YouTube video player" frameBBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
 
             </div>
-        </div>
+        </motion.div>
      );
 }
  

@@ -14,12 +14,18 @@
   justify-content: space-between;
 }
 .header > div:first-child {
+  height: 50px;
+  width: 80px;
   display: flex;
   align-items: center;
 }
 .header > div:first-child > a {
+  width: 100%;
   display: flex;
   align-items: center;
+}
+.header > div:first-child > a svg {
+  height: 100%;
 }
 .header .notification {
   position: relative;
@@ -57,7 +63,7 @@
   border: 1px solid red;
   width: 10rem;
   height: 7rem;
-  z-index: 100;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: start;
@@ -101,13 +107,40 @@
 }
 
 .query {
+  display: none;
   position: absolute;
-  width: 222px;
-  height: 141px;
+  width: 12rem;
   color: white;
   font-size: 16px;
-  border: 1px solid red;
-  top: 54px;
-  left: 239px;
+  border: 1px solid rgba(155, 154, 151, 0.4);
+  top: 44px;
+  left: 248px;
   z-index: 2;
+  background: #000;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0 0 30px 30px;
+}
+.query > ul {
+  text-decoration: none;
+  list-style: none;
+  color: #9b9a97;
+}
+.query > ul li {
+  padding: 5px 0;
+}
+.query > ul li a {
+  font-style: 15px;
+  color: #9b9a97;
+}
+.query > ul li a :last-child {
+  font-size: 10px;
+}
+.query > ul li a span {
+  display: flex;
+  flex-direction: column;
+}
+.query > ul li a:hover {
+  color: #ae1d1d;
 }/*# sourceMappingURL=Header.module.css.map */
