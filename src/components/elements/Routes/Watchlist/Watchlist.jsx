@@ -1,14 +1,16 @@
 import { Link, useLoaderData } from "react-router-dom";
-import { DATA } from "./../../../../data";
 import styles from "./Watchlist.module.scss";
 import { removeFromFavourites } from "../../../../utiles";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Watchlist = () => {
-   //const data = useLoaderData();
-   const data = DATA;
-   const [ favourites, setFavourites ] = useState(JSON.parse(localStorage.getItem('favourites')));
+   const data = useLoaderData();
+   const [ favourites, setFavourites ] = useState(
+            JSON.parse(localStorage.getItem('favourites')) 
+            ? JSON.parse(localStorage.getItem('favourites')) 
+            : []
+      );
 
    const removeFav = (movie) => {
       removeFromFavourites(movie);
@@ -20,8 +22,6 @@ const Watchlist = () => {
                   }
             }
       }
-
-
 
 
     return ( 
@@ -36,26 +36,27 @@ const Watchlist = () => {
                   ?
                   data.map((movie, i) => {
                         if (favourites.length > 0  && favourites.some((item, i) => item[0] === movie.id)){
-                              return  <motion.div key={movie.id}
+                              return  <motion.div 
+                                           key={movie.id}
                                            className={styles.item}
                                            initial={{ scale: 1 }}
                                            whileHover={{ scale: 1.01 }}
                                            transition={{ duration: 0.1 }}
                                       >
                               <div className={styles.itemImg}>
-                                    <img src={movie.mainImage} alt={movie.name} />   
+                                    <img src={movie.poster.url} alt={movie.name} />   
                               </div>
                               <div className={styles.itemDetails}>
                                     <Link to={"/" + i}>
                                           {movie.alternativeName ? movie.alternativeName : movie.name}
                                     </Link>  
                                     <div className={styles.genres}>
-                                          <span>{movie.genre ? movie.genre : 'Action'}</span>
+                                          {movie?.genres.map((m) => <span>{m.name}</span>)}
                                           <div><i class='bx bxs-star'></i>
-                                                {movie.rating}
+                                                {movie.rating.imdb}
                                           </div>  
                                     </div> 
-                                    <div>Time: <span>{movie.filmLength.toUpperCase(movie.filmLength)}</span></div>
+                                    <div>Time: <span>{movie.movieLength}M</span></div>
                                     <div>{movie.shortDescription}</div>
                               </div>
                               <button onClick={() => removeFav(movie)}><i className='bx bx-message-square-x bx-sm'></i></button>
@@ -66,13 +67,8 @@ const Watchlist = () => {
                   })
                         
                   :
-                  <div 
-                        className={styles.emptyList}
-                  >
-                        <i 
-                              className='bx bx-ghost'
-
-                        ></i>
+                  <div className={styles.emptyList}>
+                        <i className='bx bx-ghost'></i>
                         <span>Add something to your watchlist</span>                  
                   </div>
                   }

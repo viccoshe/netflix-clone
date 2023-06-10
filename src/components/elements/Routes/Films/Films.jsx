@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { DATA } from "./../../../../data.js";
+import { Link, useLoaderData } from "react-router-dom";
 import styles from "./Films.module.scss";
 import { Swiper, SwiperSlide, useSwiperSlide} from 'swiper/react';
 import { Navigation, Mousewheel} from 'swiper';
@@ -9,18 +8,13 @@ import 'swiper/scss/mousewheel';
 import { motion } from "framer-motion";
 
 const Films = () => {
-    let data = DATA;
+    const data = useLoaderData();
 
-    const genres = ['Комедия', 
+    const genres = ['Драма', 
+                    'Боевик',
                     'Криминал', 
-                    'Драма', 
-                    'Триллер', 
-                    'Биография', 
-                    'Боевик', 
-                    'Фантастика', 
-                    'Детектив', 
-                    'Фентези',
-                    'action'];
+                    'Комедия', 
+                    ];
 
     return ( 
         <motion.div
@@ -43,14 +37,15 @@ const Films = () => {
                                             mousewheel
                                     >
                                         {data.map((movie, i) => {
-                                            if(movie.genres.some((item) => item === gen.toLowerCase())){
+                                            if(movie.genres.some((item) => item.name === gen.toLowerCase())){
                                                 return <SwiperSlide  
                                                             className={styles.filmItem}
-                                                            style={{ backgroundImage: `url(${movie.mainImage})`}}
+                                                            style={{ backgroundImage: `url(${movie.poster.url})`}}
                                                             key={movie.id}
                                                         >
                                                             <Link to={"/" + i}>
-                                                                    {movie.alternativeName ? movie.alternativeName : movie.name}
+                                                                {movie.name}
+                                                                {/* {movie.alternativeName ? movie.alternativeName : movie.name} */}
                                                             </Link>  
                                                             <span>{movie.year}</span>    
                                                         </SwiperSlide>  

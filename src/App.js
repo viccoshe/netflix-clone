@@ -8,7 +8,7 @@ import Films from "./components/elements/Routes/Films/Films";
 import Sidebar from "./components/UI/Sidebar/Sidebar";
 import { useEffect, useState, createContext } from "react";
 import styles from "./App";
-import { useLocation} from "react-router-dom";
+import { useLocation, useLoaderData} from "react-router-dom";
 import ErrorPage from "./components/UI/ErrorPage/ErrorPage";
 import { getApi } from "./data";
 import { dataLoader } from "./data";
@@ -23,29 +23,21 @@ export const DataContext = createContext();
 
 function App() {
   const [data, setData] = useState([]);
-  //const location = useLocation();
-
-  // useEffect(() => {
-  //   getApi('https://dummyjson.com/products') //`https://kinopoiskapiunofficial.tech/api/v2.2/films`
-  //   .then(res => console.log(res.products) && setData(res.json().products));  //items
-  // }, [])
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      
-      <Route path="/" element={<Root />}>
-        <Route index element={<Popular />} /> 
-        <Route path="/:id" element={<Main/>} />
-        <Route path="/tvshows" element={<TvShows/>} />
-        <Route path="/watchlist" element={<Watchlist/>} />
-        <Route path="/films" element={<Films/>} />
+      <Route path="/" element={<Root />} loader={dataLoader} >
+        <Route index element={<Popular />} loader={dataLoader}/> 
+        <Route path="/:id" element={<Main/>} loader={dataLoader}/>
+        <Route path="/tvshows" element={<TvShows/>} loader={dataLoader}/>
+        <Route path="/watchlist" element={<Watchlist/>} loader={dataLoader}/>
+        <Route path="/films" element={<Films/>} loader={dataLoader}/>
         <Route path="*" element={<NotFoundPage/>}/>
       </Route>
 
 
     )
   )
-  ////loader={dataLoader} верни все ладеры
 
   return (
     <div>
@@ -62,13 +54,13 @@ function App() {
 
 export default App;
 
-
+ 
 const Root = () => { 
   const [isSidebarShow, setIsSidebarShow] = useState(false);
   const [loginWindow, setLoginWindow] = useState(true);
   const [signUp, setSignUp] = useState(false);
   const [user, setUser] = useState(null);
-  const location = useLocation();
+  const data = useLoaderData();
 
   useEffect(() => {
     if(!user || user === null){
@@ -98,7 +90,9 @@ const Root = () => {
         /> 
       : ''
       }
-        <Header user={user}
+        <Header 
+                data={data}
+                user={user}
                 setuser={setUser}
                 loginWindow={loginWindow} 
                 setLoginWindow={setLoginWindow}
@@ -120,8 +114,6 @@ const Root = () => {
             </div>
         </div>
         <Footer />
-
-
     </>
   )
 

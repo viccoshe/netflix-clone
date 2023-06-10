@@ -39,8 +39,8 @@ const Profile = ( { loginWindow, setLoginWindow, user, setUser }) => {
                 {activeDropdown ?
                     <motion.div 
                         className={styles.dropdown}
-                        initial={{ scale: 0}}
-                        whileInView={{ scale: 1 }}
+                        initial={{ scale: 0, opacity: 0}}
+                        whileInView={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 0.2 }}
                         animate={{ boxShadow: "3px 1px 58px 14px rgba(0, 0, 0, 0.215)" }}
                     >

@@ -88,7 +88,6 @@ export  const removeFromFavourites = ( movie ) => {
   let favourites = JSON.parse(localStorage.getItem('favourites'));
   if(favourites && favourites.length > 0){
       if(favourites.some((item) => item[0] === movie.id)){
-        const elem = favourites.find((item, i) => item[i] === movie.id);
           favourites = favourites.filter(i => i !== favourites.find((item, i) => item[0] === movie.id));
           localStorage.setItem('favourites', JSON.stringify(favourites));
           alert(`"${movie.name}" is removed from your watchlist!`);

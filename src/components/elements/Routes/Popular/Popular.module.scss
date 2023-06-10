@@ -1,5 +1,6 @@
 @import "./../../../../_variables";
 
+
 .popular {
     color: white;
     margin: 0 3rem 3rem;
@@ -8,20 +9,18 @@
         font-size: 3.5em;
         margin-bottom: 1rem;
         margin-left: 0;
-        
     }
 
     .popularBlock {
         padding: 3rem;
         border-radius: 10px;
-        width: 85%;
+        width: 93%;
         height: 19rem;
         background-size: cover;
         background-position: center;
 		background-repeat: no-repeat;
 		position: relative;
-
-
+        background-position: center 10%;
 
         &::before {
             content: '';
@@ -47,7 +46,7 @@
         }
 
         h1 {
-            color: #e3e3e3;
+            color: #c3c3c3;
 
         }
 
@@ -62,8 +61,12 @@
                 margin-right: 4rem;
             }
 
+            >:last-child {
+                margin-right: 4rem;
+            }
+
             > span {
-                color: #fff;
+                color: #c3c3c3;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -72,9 +75,10 @@
                 width: 7rem;
                 padding: 0.1rem 0.8rem;
                 font-weight: 600;
+                text-transform: uppercase;
 
                 i {
-                    margin-right: 3px;
+                    margin-right: 10px;
                     color: rgb(247, 206, 0);  
                 }
             }
@@ -90,7 +94,16 @@
             position: relative;
             transition: 0.3s;
             width: 7rem; 
-            color: #fff;
+            color: #c3c3c3;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background-color 0.4s ease-in-out;
+
+            &:hover {
+                background-color: #6a0b0b;
+            }
 
         }
     }
@@ -111,15 +124,15 @@
             position: relative;
             border-radius: 10px;
             background-size: cover;
+            background-position: center 20%;
             background-repeat: no-repeat;
-            width: 50%;
+            //width: 31% !important;
             height: 16rem;
             display: flex;
             justify-content: space-between;
             align-items: start;
             flex-flow: wrap column;
-            background-position: center;
-            background-repeat: no-repeat;
+
             &:hover {
                 transition: all .2s ease-in-out;
                 transform: scale(0.96);
@@ -154,19 +167,20 @@
             }
 
             >a {
-                margin: 3rem 0 0 1rem;
+                margin: 1rem 0 0 2rem;
                 color: #e3e3e3;
                 font-weight: 600;
                 font-size: 29px;
+                transition: color 0.3s ease-in-out;
 
                 &:hover {
-                    color: $gray;
+                    color: #b41818;
                 }
 
             }
 
             .year {
-                margin-left: 1rem;
+                margin-left: 2rem;
                 color: #cdcdcd;
                 font-weight: 600;
                 font-size: 17px;
@@ -181,8 +195,9 @@
                 border: none;
                 padding: 0.5rem;
                 justify-self: end;
-                margin: 1.3rem;
                 align-self: end;
+                margin: 0 1rem 1rem 0;
+                
 
                 >i {
                     color: #fff;
@@ -198,13 +213,6 @@
 
 
 
-
-
-@media only screen and (max-width: 1440px) { 
-
-
-}
-
 @media only screen and (max-width: 1440px) { 
 
 
@@ -216,13 +224,26 @@
 }
 
 @media only screen and (max-width: 1152px) { 
-
-
+    .popular {
+        .trendWrapper {
+            
+            .trendItem {
+                // height: 15rem;
+                width: 31% !important;
+            }            
+        }
+    }
 }
 
 @media only screen and (max-width: 1024px) { 
-
-
+    // .popular {
+    //     .trendWrapper {
+            
+    //         .trendItem {
+    //             width: 15rem;
+    //         }            
+    //     }
+    // }
 }
 
 

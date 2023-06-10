@@ -4,22 +4,26 @@
 .filmsWrapper {
     color: #fff;
 
-
     .filmsCategory {
+        margin: 3rem;
+        background-color: #141517;
+        padding: 2rem;
+        border-radius: 25px;
+        width: 78%;
+        border: 1px solid #212224;
 
         h4 {
             color: $gray;
             text-transform: uppercase;
             margin-top: 0;
+            letter-spacing: 2px;
         }
-        margin: 3rem;
-        background-color: #141517;
-        padding: 2rem;
-        border-radius: 25px;
-        width: 70%;
-        border: 1px solid #212224;
+
 
         .catBlock{
+            flex-direction: column;
+            justify-content: center;
+
 
             .filmItem {
                 position: relative;

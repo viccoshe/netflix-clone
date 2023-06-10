@@ -11,9 +11,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 const Main = () => {
     const [activeTab, setActiveTab] = useState(1);
     const [openVideo, setOpenVideo] = useState(false);
-    //const data = useLoaderData();
-    let data = DATA;
-    //console.log(data);
+    const data = useLoaderData();
     const {id} = useParams();
 
 
@@ -22,7 +20,7 @@ const Main = () => {
             <div 
                 className={styles.main}
                 style={{
-                    backgroundImage: `url(${data[`${id}`].mainImage})`
+                    backgroundImage: `url(${data[`${id}`].poster.url})`
                 }}
             >
                 {activeTab === 1 ? (

@@ -64,8 +64,8 @@ a {
                 height: 16rem;
                 width: 16rem;
                 border-radius: 10px;
-                object-fit:cover;
-
+                object-fit: cover;
+                object-position: center 30%;
 
             }
         }
@@ -99,12 +99,14 @@ a {
     
             .genres {
                 display: flex;
+                flex-direction: row;
                 justify-content: start;
                 width: 100%;
                 margin: 1rem 0;
 
-                span {
+                > span {
                     margin-right: 1rem;
+
                 }
 
                 > * {
@@ -112,7 +114,6 @@ a {
                     text-align: center;
                     background-color: #6b6b6b77;
                     border-radius: 5px;
-                    width: 4rem;
                     padding: 0.3rem;
 
                     i {

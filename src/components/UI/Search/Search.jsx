@@ -1,8 +1,6 @@
 import styles from './Search.module.scss';
-import { DATA } from '../../../data';
 
 const Search = ({ query, setQuery }) => {
-    const data = DATA;
 
     return ( 
         <>
