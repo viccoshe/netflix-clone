@@ -16,12 +16,6 @@ const Information = ({ movie, openVideo, setOpenVideo }) => {
         transition={{ duration: 0.4}}
         className={styles.info}>
         <h1>{name}</h1>
-			{/* <img найди лого
-				src={logo}
-				alt={name}
-				width='270'
-				style={{ opacity: 0.7 }}
-			/> */}
         <div className={styles.additional}>
             <span>{year}</span>
             <span className={styles.age}>{limitAge ? limitAge : "6+"}</span>

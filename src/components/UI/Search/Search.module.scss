@@ -11,9 +11,18 @@
 	z-index: 3;
 	width: 13rem;
 
+	@media only screen and (max-width: 768px) { 
+		margin-left: 1rem;
+	}
+
+	@media only screen and (max-width: 540px) { 
+		display: none ;
+	}
+
 	> div {
 		display: flex;
 		align-items: center;
+
 	}
 
 	input {
@@ -27,14 +36,35 @@
 			color: $gray;
 		}
 	}
+}
 
-	i {
-		color: $gray;
-		font-size: 20px;
-		transition: color 0.5s ease-in-out;
-            
-		&:hover {
-			color: $darkRed;
-		}
+.hiddenBtn {
+	display: none;
+	border: none;
+	background-color: transparent;
+
+	&:active {
+		scale: 1.1;
+	}
+
+		@media only screen and (max-width: 540px) { 
+			display: block;
+		
 	}
 }
+
+i {
+	color: $gray;
+	font-size: 20px;
+	transition: color 0.5s ease-in-out;
+		
+	&:hover {
+		color: $darkRed;
+	}
+}
+
+// @media only screen and (max-width: 540px) { 
+// 	.search {
+// 		display: none ;
+// 	}
+// }

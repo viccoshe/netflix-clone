@@ -1,13 +1,16 @@
 import Search from "../../UI/Search/Search";
 import styles from "./Header.module.scss";
 import Profile from "./Profile";
-import { DATA } from '../../../data';
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import HiddenSearch from "../../UI/Search/HiddenSearch";
+import Scanner from "../../UI/Scanner/Scanner";
 
 const Header = ( { data, user, setUser, loginWindow, setLoginWindow }) => {
     const [ query, setQuery ] = useState('');
+    const [ hiddenSearch, setHiddenSearch ] = useState(false);
+    const [ isScanShow, setIsScanShow ] = useState(false);
 
     const svgVariants = {
         hidden: { rotate: -180 },
@@ -31,8 +34,6 @@ const Header = ( { data, user, setUser, loginWindow, setLoginWindow }) => {
             }
         }
     }
-
-
     
     return (
         <>
@@ -56,7 +57,13 @@ const Header = ( { data, user, setUser, loginWindow, setLoginWindow }) => {
                         </g>
                     </motion.svg>
                     </a>
-                    <Search query={ query } setQuery={ setQuery }/>                 
+                    <Search 
+                        isScanShow={isScanShow}
+                        setIsScanShow={setIsScanShow}
+                        setQuery={ setQuery }
+                        hiddenSearch={ hiddenSearch}
+                        setHiddenSearch={ setHiddenSearch}
+                    />                 
                 </div>
                 <Profile 
                     loginWindow={loginWindow} 
@@ -92,7 +99,18 @@ const Header = ( { data, user, setUser, loginWindow, setLoginWindow }) => {
                     </ul>
                 </motion.div> 
                 :
-                '' }  
+                '' }
+
+                {hiddenSearch
+                ?
+                <HiddenSearch hiddenSearch={hiddenSearch} setHiddenSearch={hiddenSearch} setQuery={setQuery}/>
+                :
+                ''}
+
+                {isScanShow 
+                ? 
+                <Scanner isScanShow={isScanShow} setIsScanShow={setIsScanShow} /> 
+                : ''}
             
     
         </>

@@ -49,3 +49,38 @@
 		}
 	}
 }
+
+@media only screen and (max-width: 650px) { 
+	.sidebar {
+		position: absolute;
+		z-index: 3;
+		height: 50%;
+		padding-right: 1rem;
+		border-radius: 0 0 10px 0;
+		min-width: 7.5%;
+		width: auto !important;
+		background-color:#0d0d0d;
+		-webkit-box-shadow: 12px 14px 16px 6px rgba(10, 16, 20, 0.555);
+		-moz-box-shadow: 12px 14px 16px 6px rgba(10, 16, 20, 0.555);
+		box-shadow: 12px 14px 16px 6px rgba(10, 16, 20, 0.555);
+		button {
+			padding: 20px 0 0 10px;
+			i {
+				font-size: 30px;
+			}
+		}
+
+		ul {
+			li {
+				padding-right: 1rem;
+				width: 100%;
+
+				a {
+					width: 100%;
+					text-align: left;
+				}
+			}
+		}
+	}
+
+}

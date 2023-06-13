@@ -18,6 +18,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./utiles";
 import { AnimatePresence } from 'framer-motion';
 import Footer from "./components/elements/Footer/Footer";
+import "./App.scss";
 
 export const DataContext = createContext();
 
@@ -34,20 +35,14 @@ function App() {
         <Route path="/films" element={<Films/>} loader={dataLoader}/>
         <Route path="*" element={<NotFoundPage/>}/>
       </Route>
-
-
     )
   )
 
   return (
     <div>
-      <AnimatePresence>
         <DataContext.Provider value={{data}}>
           <RouterProvider router={router}/>      
         </DataContext.Provider>        
-      </AnimatePresence>
-
-
     </div>
   );
 }
@@ -57,6 +52,7 @@ export default App;
  
 const Root = () => { 
   const [isSidebarShow, setIsSidebarShow] = useState(false);
+  const [isHiddenSidebarShow, setIsHiddenSidebarShow] = useState(false);
   const [loginWindow, setLoginWindow] = useState(true);
   const [signUp, setSignUp] = useState(false);
   const [user, setUser] = useState(null);
@@ -81,7 +77,7 @@ const Root = () => {
   })
 
   return (
-    <>
+    <div>
       {!user && user === null && loginWindow 
       ? <Login signUp={signUp} 
                setSignUp={setSignUp}
@@ -98,15 +94,17 @@ const Root = () => {
                 setLoginWindow={setLoginWindow}
                 
         /> 
-        <div style={{
-            display: 'flex',
-            flexDirection: 'row'}}
+        <div className="mainWrapper"
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+              }}
         >
-            <Sidebar 
-              isSidebarShow={isSidebarShow}
-              setIsSidebarShow={setIsSidebarShow}
-            />
-            <div style={{width: isSidebarShow ? '85%' : '90%'}}>
+          <Sidebar 
+            isSidebarShow={isSidebarShow}
+            setIsSidebarShow={setIsSidebarShow}
+          />
+          <div style={{width: isSidebarShow ? '85%' : '90%'}}>
                 <Outlet 
                   isSidebarShow={isSidebarShow}
                   setIsSidebarShow={setIsSidebarShow}
@@ -114,7 +112,7 @@ const Root = () => {
             </div>
         </div>
         <Footer />
-    </>
+    </div>
   )
 
 }

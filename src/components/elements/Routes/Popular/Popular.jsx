@@ -18,33 +18,6 @@ const Popular = () => {
         : []
     );
 
-
-
-    // const swiper = new Swiper('.swiper', {
-    //     // Default parameters
-    //     slidesPerView: 1,
-    //     spaceBetween: 10,
-    //     // Responsive breakpoints
-    //     breakpoints: {
-    //       // when window width is >= 320px
-    //       320: {
-    //         slidesPerView: 2,
-    //         spaceBetween: 20
-    //       },
-    //       // when window width is >= 480px
-    //       480: {
-    //         slidesPerView: 3,
-    //         spaceBetween: 30
-    //       },
-    //       // when window width is >= 640px
-    //       640: {
-    //         slidesPerView: 4,
-    //         spaceBetween: 40
-    //       }
-    //     }
-    //   })
-      
-      
     const toggleFav = ( movie ) => {
         toggleFavourites( movie );
 
@@ -92,7 +65,7 @@ const Popular = () => {
                     <div>NEW</div>
                         <h1>{popularMovies[0].name}</h1>
                         <div className={styles.rate}>
-                            <span><i className='bx bxl-imdb bx-md'></i>{popularMovies[0].rating.imdb}</span>
+                            <span><i className='bx bxl-imdb'></i>{popularMovies[0].rating.imdb}</span>
                             <span>{ popularMovies[0].language ?  popularMovies[0].language : 'English'}</span>
                         </div>
 
@@ -112,24 +85,34 @@ const Popular = () => {
             <h2>Top rated</h2>
                 <div className={styles.trendWrapper}>
                 <Swiper 
-                    breakpoints={{
-                    // when window width is >= 640px
-                    640: {
-                      width: 640,
-                      slidesPerView: 1,
-                    },
-                    // when window width is >= 768px
-                    768: {
-                      width: 768,
-                      slidesPerView: 2,
-                    },
-                  }}
                     modules={[ Navigation, Mousewheel ]}
                                     spaceBetween={35}
                                     slidesPerView={3}
                                     navigation
                                     mousewheel
-                                            
+                                    breakpoints={{
+                                        1152: {
+                                            slidesPerView: 3,
+                                        },
+                                        800: {
+                                            slidesPerView: 2,
+                                        },
+                                        768: {
+                                            slidesPerView: 2,
+                                        },
+                                        425: {
+                                            slidesPerView: 2,
+                                        },
+                                        480: {
+                                            slidesPerView: 2,
+                                        },
+                                        320: {
+                                            slidesPerView: 1,
+                                        },
+                                        0: {
+                                            slidesPerView: 1,
+                                        },
+                    }}                         
                 >
                     {popularMovies.length > 0 
                     ?
@@ -140,9 +123,7 @@ const Popular = () => {
                                         style={{ backgroundImage: `url(${movie.poster.url})` }}>
                                                 <span className={styles.trendRate}><i className='bx bxs-star bx-xs'></i>{popularMovies[0].rating.imdb}</span>
                                                 <Link to={"/" + i}>
-                                                    
                                                     {movie.name}
-                                                    {/* {movie.alternativeName ? movie.alternativeName : movie.name} */}
                                                 </Link>  
                                                 <span className={styles.year}>{movie.year}</span>
                                                 <button onClick={() => toggleFav(movie)}>

@@ -50,16 +50,16 @@ const Watchlist = () => {
                                     <Link to={"/" + i}>
                                           {movie.alternativeName ? movie.alternativeName : movie.name}
                                     </Link>  
+                                    <div className={styles.rate}><i class='bx bxs-star'></i>
+                                                {movie.rating.imdb}
+                                          </div> 
                                     <div className={styles.genres}>
                                           {movie?.genres.map((m) => <span>{m.name}</span>)}
-                                          <div><i class='bx bxs-star'></i>
-                                                {movie.rating.imdb}
-                                          </div>  
-                                    </div> 
-                                    <div>Time: <span>{movie.movieLength}M</span></div>
+                                    </div>                                     
+                                    <div className={styles.time}>Time: <span>{movie.movieLength}M</span></div>
                                     <div>{movie.shortDescription}</div>
                               </div>
-                              <button onClick={() => removeFav(movie)}><i className='bx bx-message-square-x bx-sm'></i></button>
+                              <button onClick={() => removeFav(movie)}><i className='bx bx-message-square-x'></i></button>
                         </motion.div>
                   
                         }

@@ -35,6 +35,32 @@ const Films = () => {
                                             slidesPerView={4}
                                             navigation
                                             mousewheel
+                                            breakpoints={{
+                                                1440: {
+                                                    slidesPerView: 4,
+                                                },
+                                                1152: {
+                                                    slidesPerView: 3,
+                                                },
+                                                800: {
+                                                    slidesPerView: 2,
+                                                },
+                                                768: {
+                                                    slidesPerView: 2,
+                                                },
+                                                420: {
+                                                    slidesPerView: 2,
+                                                },
+                                                410: {
+                                                    slidesPerView: 1,
+                                                },
+                                                320: {
+                                                    slidesPerView: 1,
+                                                },
+                                                0: {
+                                                    slidesPerView: 1,
+                                                },
+                                            }} 
                                     >
                                         {data.map((movie, i) => {
                                             if(movie.genres.some((item) => item.name === gen.toLowerCase())){

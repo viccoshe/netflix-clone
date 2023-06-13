@@ -80,6 +80,7 @@
                 i {
                     margin-right: 10px;
                     color: rgb(247, 206, 0);  
+                    font-size: 2.5rem;
                 }
             }
         }
@@ -119,6 +120,8 @@
 
     .trendWrapper {
         color: $gray;
+        width: 100%;
+        height: fit-content;
 
         .trendItem {
             position: relative;
@@ -126,7 +129,6 @@
             background-size: cover;
             background-position: center 20%;
             background-repeat: no-repeat;
-            //width: 31% !important;
             height: 16rem;
             display: flex;
             justify-content: space-between;
@@ -212,117 +214,111 @@
 }
 
 
-
-@media only screen and (max-width: 1440px) { 
-
-
-}
-
-@media only screen and (max-width: 1280px) { 
-
-
-}
-
-@media only screen and (max-width: 1152px) { 
+@media only screen and (max-width: 1024px) { 
     .popular {
+        .popularBlock {
+            width: auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) { 
+    .popular {
+        .popularBlock {
+            height: 13rem;
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .rate {
+                span {
+                    width: auto;
+                    font-size: 13px;
+                    
+                        i {
+                        font-size: 1.7rem;
+                    }
+                }
+            }
+
+            a {
+                button {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) { 
+
+    .popular {
+        .popularBlock {
+            padding: 1.5rem;
+
+            .rate {
+                >:first-child {
+                    margin-right: 1rem;
+                }
+            }
+
+            h1 {
+                font-size: 1.7rem;
+                margin: 1rem 0 0 0;
+            }
+
+            a {
+                button {
+                    font-size: 12px;
+                    width: auto;
+                    margin: 0.5rem 0 0 0;
+                }
+            }
+        }
         .trendWrapper {
             
             .trendItem {
-                // height: 15rem;
-                width: 31% !important;
+                height: 9rem;
+
+                .trendRate {
+                    font-size: 12px;
+                }
+
+                .year {
+                    display: none;
+                }
+
+                a {
+                    font-size: 22px;
+                    margin:  0 auto;
+                }
+
+                button {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
             }            
         }
     }
 }
 
-@media only screen and (max-width: 1024px) { 
-    // .popular {
-    //     .trendWrapper {
-            
-    //         .trendItem {
-    //             width: 15rem;
-    //         }            
-    //     }
-    // }
-}
-
-
-@media only screen and (max-width: 800px) { 
-
-
-}
-
-@media only screen and (max-width: 768px) { 
-
-
-}
-
-@media only screen and (max-width: 425px) { 
-
-
-}
-
 @media only screen and (max-width: 375px) { 
-
-
+    .popular {
+        height: 32rem;
+    }
 }
 
-@media only screen and (max-width: 320px) { 
+@media only screen and (max-width: 340px) { 
+    .popular {
 
-
+        padding: 1rem;
+        .popularBlock {
+            .rate {
+                >:last-child {
+                    display: none;
+                }
+            }
+        }
+    }
 }
-
-
-// 320px, включая экраны: 375px, 425px,
-// 768px, 800px, 1024px, 1152px, 1280px, 1440px.
-
-// @media only screen and (max-width: 1440px) { 
-
-
-// }
-
-// @media only screen and (max-width: 1440px) { 
-
-
-// }
-
-// @media only screen and (max-width: 1280px) { 
-
-
-// }
-
-// @media only screen and (max-width: 1152px) { 
-
-
-// }
-
-// @media only screen and (max-width: 1024px) { 
-
-
-// }
-
-
-// @media only screen and (max-width: 800px) { 
-
-
-// }
-
-// @media only screen and (max-width: 768px) { 
-
-
-// }
-
-// @media only screen and (max-width: 425px) { 
-
-
-// }
-
-// @media only screen and (max-width: 375px) { 
-
-
-// }
-
-// @media only screen and (max-width: 320px) { 
-
-
-// }

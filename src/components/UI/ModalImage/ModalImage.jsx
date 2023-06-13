@@ -16,8 +16,8 @@ const ModalImage = ({ popup, setPopup, photoUrl}) => {
                 initial={{ opacity: 0}}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4}}
-            className={styles.modal}
-            onClick={() => setPopup(!popup)}
+                className={styles.modal}
+                onClick={() => setPopup(!popup)}
             >
                 <div className={styles.modalImage}
                     onClick={(e) => e.stopPropagation()}    

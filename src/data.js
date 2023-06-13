@@ -3,34 +3,33 @@ import bg from './images/bg.jpg';
 import { useEffect, useState } from 'react';
 
 
-export const getApi = async (link) => {
-	let records = {};
-	await fetch(link, { //`https://kinopoiskapiunofficial.tech/api/v2.2/films/top`
-		method: 'GET',
-		headers: {
-			'X-API-KEY': '8d38b668-7280-4adc-9ae5-51a133221b26',
-			'Content-Type': 'application/json',
-		},
-	})
-		.then(res => res.json())
-		.then(json => records = json)
-		.catch(err => console.log('err ' + err))
-		return records;
-		// const items = await data.json();
-		// console.log(items.projects)
-		// return items.projects;
-}
+// export const getApi = async (link) => {
+// 	await fetch(link, { //`https://kinopoiskapiunofficial.tech/api/v2.2/films/top`
+// 		method: 'GET',
+// 		headers: {
+// 			'X-API-KEY': '8d38b668-7280-4adc-9ae5-51a133221b26',
+// 			'Content-Type': 'application/json',
+// 		},
+// 	})
+// 		.then(res => res.json())
+// 		.then(json => records = json)
+// 		.catch(err => console.log('err ' + err))
+// 		return records;
+// 		// const items = await data.json();
+// 		// console.log(items.projects)
+// 		// return items.projects;
+// }
 
 export const dataLoader = async() => {
-	const data =  await fetch('https://api.kinopoisk.dev/v1.3/movie', {
-		method: 'GET',
-		headers: {
-			'X-API-KEY': 'QJ3M2P9-19R4B7H-GBF24AR-V45GY0M',
-			'Content-Type': 'application/json',
-		},
-	});
-		const items = await data.json();
-		console.log(items.docs);
+	// const data =  await fetch('https://api.kinopoisk.dev/v1.3/movie', {
+	// 	method: 'GET',
+	// 	headers: {
+	// 		'X-API-KEY': 'QJ3M2P9-19R4B7H-GBF24AR-V45GY0M',
+	// 		'Content-Type': 'application/json',
+	// 	},
+	// });
+	// 	const items = await data.json();
+	// 	console.log(items.docs);
 
 		const DATA = [
 			{
@@ -40,7 +39,7 @@ export const dataLoader = async() => {
 				rate: 5.6,
 				poster: {url: bg},
 				year: 2019,
-				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}],
+				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}, {name:'драма'}],
 				limitAge: '12+',
 				rating: {imdb: '7.89'},
 				movieLength: '1h 56min',
@@ -63,7 +62,7 @@ export const dataLoader = async() => {
 			
 				poster: {url: bg},
 				year: 2019,
-				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}],
+				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}, {name:'драма'}],
 				rate: 9.6,
 				limitAge: '12+',
 				rating: [{imbd: '7.89'}],
@@ -110,7 +109,7 @@ export const dataLoader = async() => {
 			
 				poster: {url: bg},
 				year: 2019,
-				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}],
+				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}, {name:'драма'}],
 				rate: 9.6,
 				limitAge: '12+',
 				rating: [{imbd: '7.89'}],
@@ -157,7 +156,7 @@ export const dataLoader = async() => {
 			
 				poster: {url: bg},
 				year: 2019,
-				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}],
+				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}, {name:'драма'}],
 				rate: 9.6,
 				limitAge: '12+',
 				rating: [{imbd: '7.89'}],
@@ -181,7 +180,7 @@ export const dataLoader = async() => {
 				rate: 5.6,
 				poster: {url: bg},
 				year: 2019,
-				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}],
+				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}, {name:'драма'}],
 				limitAge: '12+',
 				rating: {imdb: '7.89'},
 				movieLength: '1h 56min',

@@ -9,7 +9,6 @@
         background-color: #141517;
         padding: 2rem;
         border-radius: 25px;
-        width: 78%;
         border: 1px solid #212224;
 
         h4 {
@@ -39,6 +38,10 @@
                 background-position: center;
                 background-repeat: no-repeat;
 
+                @media only screen and (max-width: 600px) { 
+                    height: 10rem;
+                }
+
                 &:hover {
                     transition: all .2s ease-in-out;
                     transform: scale(0.96);
@@ -64,7 +67,17 @@
                         color: #fff;
                         font-weight: 600;
                         font-size: 29px;
-        
+                        transition: color 0.4s ease-in-out;
+
+                        @media only screen and (max-width: 600px) { 
+                            font-size: 24px;
+                        }
+
+                        @media only screen and (max-width: 460px) { 
+                            font-size: 19px;
+                            margin-top: 0;
+                        }
+                        
                         &:hover {
                             color: $gray;
                         }
@@ -76,8 +89,11 @@
                         color: #cdcdcd;
                         font-weight: 600;
                         font-size: 14px;
-                    }
-                
+
+                        @media only screen and (max-width: 600px) { 
+                            font-size: 12px;
+                        }
+                    } 
             }
         }
     }

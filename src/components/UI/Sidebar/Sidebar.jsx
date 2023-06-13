@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const menu = ['Popular', 'Films', 'Watchlist'];
 
-const Sidebar = ({ isSidebarShow, setIsSidebarShow  }) => {
+const Sidebar = ({ isSidebarShow, setIsSidebarShow }) => {
     return ( 
         <div 
             className={styles.sidebar} 

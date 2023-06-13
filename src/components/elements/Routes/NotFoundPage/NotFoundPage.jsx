@@ -1,8 +1,11 @@
+import styles from "./NotFoundPage.module.scss";
+
 const NotFoundPage = () => {
     return ( 
-        <h1>
-            Not Found
-        </h1>
+        <div className={styles.notFound}>
+            <h1>Page is not found, sorry</h1>
+            <i class='bx bxs-dizzy'></i>
+        </div>
      );
 }
  

@@ -124,6 +124,7 @@
     color: white;
     font-size: 16px;
     border: 1px solid rgba(155, 154, 151, 0.4);
+    border-radius: 50%;
     top: 44px;
     left: 248px;
     z-index: 2;
@@ -132,6 +133,16 @@
     display: flex;
     align-items: center;
     border-radius: 0 0 30px 30px;
+
+    @media only screen and (max-width: 768px) { 
+		left: 136px;
+	}
+
+    @media only screen and (max-width: 540px) { 
+        width: 100%;
+        left: 110px;
+	}
+
 
     > ul {
         text-decoration: none;
@@ -162,3 +173,4 @@
         }
     }
 }
+
