@@ -1,12 +1,11 @@
 import { Html5QrcodeScanner } from 'html5-qrcode';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styles from "./Scanner.module.scss";
 import { motion } from "framer-motion";
 
 const Scanner = ({ isScanShow, setIsScanShow }) => {
     const [ scanResult, setScanResult ] = useState(null);
-    const navigate = useNavigate();
+
 
     useEffect(() =>{
         const scanner = new Html5QrcodeScanner('reader', {

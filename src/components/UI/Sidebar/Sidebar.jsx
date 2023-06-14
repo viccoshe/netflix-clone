@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const menu = ['Popular', 'Films', 'Watchlist'];
 
-const Sidebar = ({ isSidebarShow, setIsSidebarShow }) => {
+const Sidebar = ({ data, isSidebarShow, setIsSidebarShow }) => {
     return ( 
         <div 
             className={styles.sidebar} 
@@ -26,7 +26,8 @@ const Sidebar = ({ isSidebarShow, setIsSidebarShow }) => {
                             {title}
                         </Link> 
                     </li>
-                ))}             
+                ))}  
+                <li><Link to={'/' + Math.floor(Math.random() * data?.length)}>Random film</Link></li>        
             </ul>
         </div>
      );

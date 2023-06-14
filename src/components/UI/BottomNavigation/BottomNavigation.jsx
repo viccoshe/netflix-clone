@@ -10,11 +10,11 @@ const tabs = [
         name: "Episodes",
 
     },
-    {
-        _id: 3,
-        name: "Details",
+    // {
+    //     _id: 3,
+    //     name: "Details",
 
-    },
+    // },
 ]
 
 const BottomNavigation = ({activeTab, setActiveTab}) => {

@@ -7,11 +7,13 @@ import { toggleFavourites } from "../../../../utiles";
 import { motion } from "framer-motion";
 import "swiper/scss";
 import "swiper/scss/navigation";
+import {ReactComponent as Loader} from './../../../../images/Loader.svg';
 
 const Popular = () => {
     const data = useLoaderData();
     const  [popularMovies, setPopularMovies ] = useState([]);
     const navigation = useNavigation();
+    
     const [ favs, setFavs ] = useState(
         JSON.parse(localStorage.getItem('favourites')) 
         ? JSON.parse(localStorage.getItem('favourites')) 
@@ -37,20 +39,19 @@ const Popular = () => {
 
 
     useEffect(() => {
-        const ratingOfMovies = data.sort(function(a, b) {
-            return a?.rating.imdb - b?.rating.imdb;
-        }); 
-        //let f = ratingOfMovies.filter((m, i) => m[i > 0]);
-        //console.log(f);
+        console.log(data)
+       //const ratingOfMovies = data.toSorted((a, b) => b?.rating?.imdb - a?.rating?.imdb); 
+       const ratingOfMovies = data.sort((a, b) => b?.rating?.imdb - a?.rating?.imdb); 
+        console.log(ratingOfMovies);
+        console.log(data)
         setPopularMovies(ratingOfMovies);
 
     }, [])
 
-    console.log(popularMovies)
-//  {f = data.findIndex((m) => (m.id === popularMovies[0].id))}
+    let f;
 
     if( navigation === 'loading'){
-        return <h1>Loading...</h1>
+        return  <Loader/>
     }
     return ( 
         <motion.div 
@@ -61,15 +62,15 @@ const Popular = () => {
         >
             {popularMovies && popularMovies.length > 0 ?
                 <div className={styles.popularBlock}
-                     style={{ backgroundImage: `url(${popularMovies[0].poster.url})` }}>
+                     style={{ backgroundImage: `url(${popularMovies[9].poster.url})` }}>
                     <div>NEW</div>
-                        <h1>{popularMovies[0].name}</h1>
+                    <img className={styles.img} src={popularMovies[9].logo.url}></img>
                         <div className={styles.rate}>
-                            <span><i className='bx bxl-imdb'></i>{popularMovies[0].rating.imdb}</span>
-                            <span>{ popularMovies[0].language ?  popularMovies[0].language : 'English'}</span>
+                            <span><i className='bx bxl-imdb'></i>{popularMovies[9].rating.imdb}</span>
+                            <span>{ popularMovies[9].language ?  popularMovies[9].language : 'English'}</span>
                         </div>
 
-                        <Link to={"/" + 0 }>
+                        <Link to={"/" + 3}>
                             <motion.button 
                                 initial={{ scale: 1}}
                                 whileHover={{ scale: 1.1}}
@@ -116,13 +117,16 @@ const Popular = () => {
                 >
                     {popularMovies.length > 0 
                     ?
-                    popularMovies.map((movie, i) => {
+                    popularMovies.map((movie) => {
                             return <SwiperSlide 
                                         key={movie.id} 
                                         className={styles.trendItem} 
                                         style={{ backgroundImage: `url(${movie.poster.url})` }}>
-                                                <span className={styles.trendRate}><i className='bx bxs-star bx-xs'></i>{popularMovies[0].rating.imdb}</span>
-                                                <Link to={"/" + i}>
+                                                <span className={styles.trendRate}>
+                                                    <i className='bx bxs-star bx-xs'></i>{popularMovies[0].rating.imdb}
+                                                </span>
+                                                {f = data.findIndex((film) => film === movie)}
+                                                <Link to={"/" + f}>
                                                     {movie.name}
                                                 </Link>  
                                                 <span className={styles.year}>{movie.year}</span>

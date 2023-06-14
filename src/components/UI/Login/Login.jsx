@@ -1,14 +1,16 @@
 import { useState } from "react";
 import SignUp from "../SignUp/SignUp";
 import styles from "./Login.module.scss";
-import Button from "../Button/Button";
 import { singInUser, signOutUser, logInViaGoogle }from "./../../../utiles/index";
 import { motion } from "framer-motion";
+import { useNavigation } from "react-router-dom";
+import {ReactComponent as Loader} from "./../../../images/Loader.svg";
 
 
 const Login = ({ signUp, setSignUp, loginWindow, setLoginWindow}) => {
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
+    const navigation = useNavigation();
 
     const logInNewUser = (e) => {
         e.preventDefault();
@@ -16,6 +18,9 @@ const Login = ({ signUp, setSignUp, loginWindow, setLoginWindow}) => {
         setLoginWindow(!loginWindow);
     }
 
+    if( navigation === 'loading'){
+        return  <Loader/>
+    }
     return ( 
         <motion.div className={styles.wrapper}
             initial={{ opacity: 0 }}

@@ -1,11 +1,14 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import styles from "./Watchlist.module.scss";
 import { removeFromFavourites } from "../../../../utiles";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
+import {ReactComponent as Loader} from "./../../../../images/Loader.svg";
 
 const Watchlist = () => {
    const data = useLoaderData();
+   const navigation = useNavigation();
+   
    const [ favourites, setFavourites ] = useState(
             JSON.parse(localStorage.getItem('favourites')) 
             ? JSON.parse(localStorage.getItem('favourites')) 
@@ -23,7 +26,9 @@ const Watchlist = () => {
             }
       }
 
-
+if( navigation === 'loading'){
+      return  <Loader/>
+      }
     return ( 
       <motion.div
             initial={{ opacity: 0}}

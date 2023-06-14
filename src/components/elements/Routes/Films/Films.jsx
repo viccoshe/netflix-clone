@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import styles from "./Films.module.scss";
 import { Swiper, SwiperSlide, useSwiperSlide} from 'swiper/react';
 import { Navigation, Mousewheel} from 'swiper';
@@ -6,23 +6,27 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/mousewheel';
 import { motion } from "framer-motion";
+import {ReactComponent as Loader} from "./../../../../images/Loader.svg";
 
 const Films = () => {
     const data = useLoaderData();
+    const navigation = useNavigation();
 
     const genres = ['Драма', 
                     'Боевик',
                     'Криминал', 
                     'Комедия', 
                     ];
-
+    if( navigation === 'loading'){
+        return  <Loader/>
+    }
     return ( 
         <motion.div
             initial={{ opacity: 0}}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4}}
         >
-            <h1>Trending movies</h1>
+            <h1>Trending films</h1>
             <div className={styles.filmsWrapper}>
                 {genres.length && genres.map((gen, i) => {
                     return <div key={gen.i} className={styles.filmsCategory}>

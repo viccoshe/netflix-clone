@@ -101,6 +101,7 @@ const Root = () => {
               }}
         >
           <Sidebar 
+            data={data}
             isSidebarShow={isSidebarShow}
             setIsSidebarShow={setIsSidebarShow}
           />

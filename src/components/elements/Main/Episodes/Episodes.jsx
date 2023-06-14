@@ -9,7 +9,7 @@ import { useState } from "react";
 import ModalImage from "../../../UI/ModalImage/ModalImage";
 import { motion } from "framer-motion";
 
-const Episodes = ( {movie} ) => {
+const Episodes = ({ movie} ) => {
     const [ popup, setPopup ] = useState(false);
     const [ photoUrl, setPhotoUrl ] = useState('');
 
@@ -20,6 +20,17 @@ const Episodes = ( {movie} ) => {
         setPhotoUrl(photo);
         setPopup(!popup);
     }
+    console.log(movie);
+
+    const bratStyles = {
+        width: '29%',
+        height: '10rem',
+    }
+
+    const intouchStyles = {
+        width: '23%',
+    }
+
 
     return (
         <motion.div 
@@ -28,21 +39,30 @@ const Episodes = ( {movie} ) => {
             transition={{ duration: 0.4}}
             className={styles.episodes}
         >
-             <h1>{movie.name}</h1>
-            {/* <img className={styles.movieLogo}
-                src={movie.logo}
-                alt={movie.name}
-                width='270'
-                style={{ opacity: 0.7 }}
-            /> */}
+             <img 
+            style={ movie.id === 41519 ? bratStyles ? movie.id === 535341 : intouchStyles : {width: '40%', margin:' 0rem 0 1rem'} }
+                className={styles.img} 
+                src={movie?.logo.url}
+            >
+            </img>
+             <span className={styles.year}>{movie.year}</span>
+             <div className={styles.rate}>
+                {movie.rating.imbd ? <span><i className='bx bxl-imdb'></i>{movie.rating.imbd}</span> : ''}
+                {movie.rating.kp ? <span><i className='bx bxs-film'></i>{movie.rating.kp}</span> : ''}
+                {movie.rating.filmCritics ? <span><i className='bx bxs-color'></i>{movie.rating.filmCritics}</span> : ''}
+            </div>
+            {/* <select className={styles.stream}>
+                    {movie.watchability.items && movie?.watchability?.items.map(stream => (
+                            <option key={stream.name} value={`${stream.name}`}>{stream.name}</option>
+                        ))
+                </select> */}
+            <div className={styles.countries}>
+                {movie.countries && movie.countries.map(c => {
+                    return <span>{c.name}</span>
+                })}
+            </div>
 
-            <select className={styles.seasons}>
-                {movie.seasons && movie?.seasons.map(season => (
-                    <option key={season} value={`${season}`}>{season}</option>
-                )) }
-            </select>
             <div className={styles.swiper}>
-
             <Swiper
                     modules={[Navigation, Mousewheel]}
                     spaceBetween={50}

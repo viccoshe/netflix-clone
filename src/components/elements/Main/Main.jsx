@@ -14,6 +14,7 @@ const Main = () => {
     const data = useLoaderData();
     const {id} = useParams();
 
+    
 
     return ( 
         <div className={styles.wrapper}> 
@@ -30,7 +31,7 @@ const Main = () => {
                         setOpenVideo={ setOpenVideo } 
                     /> 
                 ) : (
-                    activeTab === 2 && <Episodes movie={DATA[0]} />
+                    activeTab === 2 && <Episodes movie={data[`${id}`]} />
                 )}
                 {openVideo ? <VideoPlayer movie={ data[`${id}`]} openVideo={ openVideo } setOpenVideo={ setOpenVideo }/> : ''}
                </div> 
