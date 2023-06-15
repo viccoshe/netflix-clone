@@ -1,22 +1,17 @@
 import Header from "./components/elements/Header/Header";
 import Main from "./components/elements/Main/Main";
-import { Link, Route, createBrowserRouter, createRoutesFromElements, Outlet, RouterProvider, useNavigate } from "react-router-dom";
+import { Route, createBrowserRouter, createRoutesFromElements, Outlet, RouterProvider, useNavigate } from "react-router-dom";
 import Popular from "./components/elements/Routes/Popular/Popular";
-import TvShows from "./components/elements/Routes/TvShows/TvShows";
 import Watchlist from "./components/elements/Routes/Watchlist/Watchlist";
 import Films from "./components/elements/Routes/Films/Films";
 import Sidebar from "./components/UI/Sidebar/Sidebar";
 import { useEffect, useState, createContext } from "react";
-import styles from "./App";
-import { useLocation, useLoaderData} from "react-router-dom";
-import ErrorPage from "./components/UI/ErrorPage/ErrorPage";
-import { getApi } from "./data";
+import { useLoaderData} from "react-router-dom";
 import { dataLoader } from "./data";
 import NotFoundPage from "./components/elements/Routes/NotFoundPage/NotFoundPage";
 import Login from "./components/UI/Login/Login";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./utiles";
-import { AnimatePresence } from 'framer-motion';
 import Footer from "./components/elements/Footer/Footer";
 import "./App.scss";
 
@@ -30,7 +25,6 @@ function App() {
       <Route path="/" element={<Root />} loader={dataLoader} >
         <Route index element={<Popular />} loader={dataLoader}/> 
         <Route path="/:id" element={<Main/>} loader={dataLoader}/>
-        <Route path="/tvshows" element={<TvShows/>} loader={dataLoader}/>
         <Route path="/watchlist" element={<Watchlist/>} loader={dataLoader}/>
         <Route path="/films" element={<Films/>} loader={dataLoader}/>
         <Route path="*" element={<NotFoundPage/>}/>

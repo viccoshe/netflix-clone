@@ -5,18 +5,8 @@ import { motion } from 'framer-motion';
 
 
 const Information = ({ movie, openVideo, setOpenVideo }) => {
-    const { alternativeName: name, 
-            shortDescription: desc, id, genres, logo, limitAge, rating: rate, poster, filmLength, year } = movie;
+    const { shortDescription: desc, logo, limitAge, rating: rate, filmLength, year } = movie;
 
-    const bratStyles = {
-        width: '20%',
-    }
-
-    const intouchStyles = {
-        width: '20%',
-    }
-
-    console.log(movie);
     return ( 
     <motion.div 
         initial={{ opacity: 0}}
@@ -24,7 +14,7 @@ const Information = ({ movie, openVideo, setOpenVideo }) => {
         transition={{ duration: 0.4}}
         className={styles.info}>
         <img 
-            style={ movie.name === 'Брат' ? {width: bratStyles.width} : movie.name === '1+1' ? {width: intouchStyles.width}  : {width: '50%', margin: '3rem 0'} }
+            style={movie.name === 'Брат' || '1+1' ? {width: '20%'} : {width: '50%', margin: '3rem 0'}}
             src={logo.url}
         >
         </img>

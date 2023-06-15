@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { DATA } from "../../../data"
-import Sidebar from '../../UI/Sidebar/Sidebar';
 import Information from './Information';
 import styles from './Main.module.scss';
 import BottomNavigation from "../../UI/BottomNavigation/BottomNavigation";
@@ -40,8 +38,7 @@ const Main = () => {
                 )}
                 {openVideo ? <VideoPlayer movie={ data[`${id}`]} openVideo={ openVideo } setOpenVideo={ setOpenVideo }/> : ''}
                </div> 
-                <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab}/>
-                
+                <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab}/>    
         </div>
     );
 }

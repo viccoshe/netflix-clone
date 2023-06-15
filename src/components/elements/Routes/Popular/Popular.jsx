@@ -37,19 +37,11 @@ const Popular = () => {
         console.log(favs)
     }
 
-
-
     useEffect(() => {
-        console.log(data)
-       //const ratingOfMovies = data.toSorted((a, b) => b?.rating?.imdb - a?.rating?.imdb); 
        setPopularMovies([...data].sort((a, b) => b?.rating?.imdb - a?.rating?.imdb)); 
-        console.log(popularMovies);
-        console.log(data)
-        //setPopularMovies(ratingOfMovies);
-
     }, [])
 
-    let f;
+    console.log(navigation)
 
     if( navigation === 'loading'){
         return  <Loader/>
@@ -128,8 +120,7 @@ const Popular = () => {
                                                 <span className={styles.trendRate}>
                                                     <i className='bx bxs-star bx-xs'></i>{popularMovies[0].rating.imdb}
                                                 </span>
-                                                {f = data.findIndex((film) => film === movie)}
-                                                <Link to={"/" + f}>
+                                                <Link to={"/" + data.findIndex((film) => film === movie)}>
                                                     {movie.name}
                                                 </Link>  
                                                 <span className={styles.year}>{movie.year}</span>

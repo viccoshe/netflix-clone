@@ -6,8 +6,6 @@
 	min-height: 514px;
 	height: 100%;
 	margin: 0 0 0 3rem;
-
-	//box-shadow: 32px -48px 57px -46px #700b0b;
 	
 	.main {
 		background-size: cover;
@@ -22,7 +20,6 @@
 		@media only screen and (max-width: 800px) { 
 			min-height: auto;
 		}
-		
 
 		&::before {
 			content: '';
@@ -160,11 +157,9 @@
 
 			}
 		}
-
 	}
 
 	.episodes{
-		//position: relative;
 		z-index: 1;
 		width: 90%;
 		padding: 5rem 0 0 0;
@@ -201,7 +196,6 @@
 			width: 100%;
 			margin-bottom: 1rem;
 			
-
 			> span {
 				margin: 1rem 1rem 1rem 0;
 			}
@@ -296,7 +290,6 @@
 						}
 					}
 				}
-				
 			}
 		}
 	}

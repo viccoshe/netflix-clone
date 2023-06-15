@@ -15,8 +15,8 @@ const Films = () => {
     const genres = ['Драма', 
                     'Боевик',
                     'Криминал', 
-                    'Комедия', 
-                    ];
+                    'Комедия'];
+                    
     if( navigation === 'loading'){
         return  <Loader/>
     }

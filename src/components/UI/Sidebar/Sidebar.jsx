@@ -1,10 +1,5 @@
 import { Link } from "react-router-dom";
 import styles from "./Sidebar.module.scss";
-import Popular from "../../elements/Routes/Popular/Popular";
-import Films from "../../elements/Routes/Films/Films";
-import Watchlist from "../../elements/Routes/Watchlist/Watchlist";
-import TvShows from "../../elements/Routes/TvShows/TvShows";
-import { motion } from "framer-motion";
 
 const menu = ['Popular', 'Films', 'Watchlist'];
 

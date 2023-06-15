@@ -111,11 +111,7 @@ const Header = ( { data, user, setUser, loginWindow, setLoginWindow }) => {
                 ? 
                 <Scanner isScanShow={isScanShow} setIsScanShow={setIsScanShow} /> 
                 : ''}
-            
-    
         </>
-
-
     )
 }
  

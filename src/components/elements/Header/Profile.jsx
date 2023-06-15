@@ -55,7 +55,6 @@ const Profile = ( { loginWindow, setLoginWindow, user, setUser }) => {
                                 <Link to="/watchlist">Watchlist</Link>                  
                             </>
                         }
-
                     </motion.div>
                 :   null
                 }
