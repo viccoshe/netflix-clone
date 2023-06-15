@@ -112,7 +112,12 @@
         >i {
             color: #fff;
             font-size: 15px;
-            cursor: pointer; 
+            cursor: pointer;
+            transition: color 0,1s ease-in-out; 
+
+            &:hover {
+                color: $red;
+            }
         }
     }    
 }
@@ -120,7 +125,7 @@
 .query {
     display: none;
     position: absolute;
-    width: 12rem;
+    width: 12.5rem;
     color: white;
     font-size: 16px;
     border: 1px solid rgba(155, 154, 151, 0.4);

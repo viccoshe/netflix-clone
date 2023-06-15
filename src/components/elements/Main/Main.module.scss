@@ -6,6 +6,8 @@
 	min-height: 514px;
 	height: 100%;
 	margin: 0 0 0 3rem;
+
+	//box-shadow: 32px -48px 57px -46px #700b0b;
 	
 	.main {
 		background-size: cover;
@@ -14,6 +16,13 @@
 		position: relative;
 		width: 100%;
 		min-height: 38rem;
+		height: auto;
+		background-position: center 20%;
+
+		@media only screen and (max-width: 800px) { 
+			min-height: auto;
+		}
+		
 
 		&::before {
 			content: '';
@@ -74,18 +83,11 @@
 		position: relative;
 		align-items: center;
 		z-index: 0;
-		width: 50%;
 		padding: 5rem 0 5rem 1rem;
-		background-position: center 10%;
 
 		.img {
-			width: 100%;
+			width: 50%;
 			margin: 3rem 0;
-		}
-
-		button {
-			margin-right: 1rem;
-			
 		}
 
 		h1 {
@@ -98,10 +100,10 @@
 			display: flex;
 			align-items: center;
 			color: $gray;
-			margin: 0.5rem 0 2rem;
+			margin: 1rem 0;
 
 			>span {
-				margin-right: 1rem;
+				margin-right: 2rem;
 				font-size: 18px;
 			}
 
@@ -109,27 +111,70 @@
 				display: block;
 				border: 1px solid $gray;
 				border-radius: 15%;
-				padding: 3px 5px;
+				padding: 3px 10px;
 			}
 		}
 
 		.description {
-			font-size: 18px;
+			font-size: 1em;
 			color: $gray;
-			margin: 4rem 0 5rem;
+			margin: 2rem 0;
 			line-height: 1.65;
+			height: auto;
+			width: 98%;
+			
+			@media only screen and (max-width: 480px) { 
+				font-size: 0.8em;
+			}
+		}
+
+		>:last-child {
+			width: 82%;
+			>:first-child {
+				margin-right: 1rem;
+			}
+
+			@media only screen and (max-width: 800px) { 
+				display: flex;
+				justify-content: center;
+
+				button {
+					width: 8rem;
+					font-size: 16px;
+					i {
+						font-size: 30px;
+					}
+				}
+
+				@media only screen and (max-width: 450px) { 
+					
+					button {
+						width: 6rem;
+						padding: 4px 0;
+						font-size: 14px;
+						i {
+							font-size: 26px;
+						}
+					}
+				}
+
+			}
 		}
 
 	}
 
 	.episodes{
-		position: relative;
+		//position: relative;
 		z-index: 1;
 		width: 90%;
 		padding: 5rem 0 0 0;
 		display: flex;
 		flex-direction: column;
 		margin: 0 auto;
+
+		> * {
+			z-index: 1;
+		}
 
 		.year {
 			color: #cdcdcd7d;
@@ -145,7 +190,7 @@
 		}
 		
 		.img {
-			width: 40%;
+			width: 60%;
 			margin: 0rem 0 1rem;
 		}
 
@@ -154,11 +199,11 @@
 			flex-direction: row;
 			justify-content: start;
 			width: 100%;
-			margin: 2rem 0;
+			margin-bottom: 1rem;
 			
 
 			> span {
-				margin-right: 1rem;
+				margin: 1rem 1rem 1rem 0;
 			}
 
 			> * {
@@ -209,30 +254,13 @@
                 }
             }
         }
-
-
-		// .seasons {
-		// 	padding-left: 1rem;
-		// 	background-color: transparent;
-		// 	border: none;
-		// 	font-size: 18px;
-		// 	width: 7rem;
-		// 	color: $gray;
-		// 	margin: 3rem 0 2rem;
-
-		// 	>option{
-		// 		background-color: transparent;
-		// 		border: none;
-		// 	}
-		// }
-
 		.swiper {
-			position: relative;
 			width: 100%;
-			margin: 0 auto;
 			bottom: 20px;
+			margin-bottom: 4rem;
 
 			.episodeItem {
+				position: relative;
 				 &:hover {
 					transition: all .2s ease-in-out;
 					transform: scale(0.95);
@@ -244,12 +272,30 @@
 			}
 
 			.number {
-				font-size: 5em;
+				font-size: 550%;
 				position: absolute;
-				top: 11%;
-				right: 41%;
 				color: #000000c5;
 				text-shadow: 0 0 10px #ffffff61, 1px 0px 5px rgba(255, 255, 255, 0.32);
+				top: 9%;
+				left: 42%;
+
+				@media only screen and (max-width: 790px) { 
+					font-size: 500%;
+					@media  (max-width: 720px) {
+						font-size: 400%;
+						@media  (max-width: 570px) {
+							top: 25%;
+							@media  (max-width: 430px) {
+								top: 18%;
+								@media  (max-width: 370px) {
+									font-size: 5em;
+									top: 10%;
+									left: 40%;
+								}
+							}
+						}
+					}
+				}
 				
 			}
 		}

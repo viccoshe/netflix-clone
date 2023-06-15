@@ -3,20 +3,21 @@ import bg from './images/bg.jpg';
 
 
 export const dataLoader = async() => {
-	const data =  await fetch('https://api.kinopoisk.dev/v1.3/movie', {
-		method: 'GET',
-		headers: {
-			'X-API-KEY': 'QJ3M2P9-19R4B7H-GBF24AR-V45GY0M',
-			'Content-Type': 'application/json',
-		},
-	});
-		const items = await data.json();
-		console.log(items.docs);
+	// const data =  await fetch('https://api.kinopoisk.dev/v1.3/movie', {
+	// 	method: 'GET',
+	// 	headers: {
+	// 		'X-API-KEY': 'QJ3M2P9-19R4B7H-GBF24AR-V45GY0M',
+	// 		'Content-Type': 'application/json',
+	// 	},
+	// });
+	// 	const items = await data.json();
+	// 	console.log(items.docs);
 
 		const DATA = [
 			{
 				name: 'Avengers',
 				alternativeName: 'Avengers',
+				color: '#fff',
 				id: 75478,
 				rate: 5.6,
 				poster: {url: bg},
@@ -38,10 +39,58 @@ export const dataLoader = async() => {
 				trailer: 'https://www.youtube.com/embed/6ZfuNTqbHE8',
 			},
 			{
-				name: 'Brat',
+				name: 'Брат',
+				color: '#59bf00',
+				alternativeName: 'Brat',
+				countries: [{name: 'usa', name: 'russia'}],
+				id: 41519,
+				logo: {url: "https://avatars.mds.yandex.net/get-ott/2439731/2a0000017c61da4f185f94d808f4d90182a8/orig"},
+				poster: {url: "https://st.kp.yandex.net/images/film_big/41519.jpg"},
+				year: 2019,
+				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}, {name:'драма'}],
+				rate: 9.6,
+				limitAge: '12+',
+				rating: [{imbd: '7.89'}],
+				movieLength: '1h 56min',
+				shortDescription: "Пострадав в результате несчастного случая, богатый аристократ Филипп нанимает в помощники человека, который менее всего подходит для этой работы, – молодого жителя предместья Дрисса, только что освободившегося из тюрьмы. Несмотря на то, что Филипп прикован к инвалидному креслу, Дриссу удается привнести в размеренную жизнь аристократа дух приключений.",
+				photos: [
+					'https://d23.com/app/uploads/2019/08/1180w-600h_081319_avengers-endgame-facts-780x440.jpg',
+					'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8OtuflE7bMKCV2SqoCqFHmb-wFv3E2iIaFdeay2gpFeb-JZ5rDYYT6I3bnONc9OtU6VQ&usqp=CAU',
+					'https://images.indianexpress.com/2019/05/avengers-endgame-chris-hemsworth-1200.jpg',
+					'https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2021/04/avengers-endgame-1619486515.jpg',
+					'https://www.gamespot.com/a/uploads/screen_kubrick/1582/15828986/3505175-endgame%20head.jpg',
+				],
+				seasons: ['Season 1', 'Season 2', 'Season 3'],
+				trailer: 'https://www.youtube.com/watch?v=6ZfuNTqbHE8',
+			},
+			{
+				name: '1+1',
+				id: 535341,
+				logo: {url: 'https://avatars.mds.yandex.net/get-ott/1531675/2a0000017f0262661cde61dc260cb86f7830/orig'},
+				rate: 5.6,
+				poster: {url: bg},
+				year: 2019,
+				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}],
+				limitAge: '12+',
+				rating: {imdb: '7.89'},
+				movieLength: '1h 56min',
+				shortDescription:
+					'Marvels The Avengers (classified under the name Marvel Avengers Assemble in the United Kingdom and Ireland), or simply The Avengers, is a 2012 American superhero film based on the Marvel Comics superhero team of the same name.',
+				photos: [
+					'https://d23.com/app/uploads/2019/08/1180w-600h_081319_avengers-endgame-facts-780x440.jpg',
+					'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8OtuflE7bMKCV2SqoCqFHmb-wFv3E2iIaFdeay2gpFeb-JZ5rDYYT6I3bnONc9OtU6VQ&usqp=CAU',
+					'https://images.indianexpress.com/2019/05/avengers-endgame-chris-hemsworth-1200.jpg',
+					'https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2021/04/avengers-endgame-1619486515.jpg',
+					'https://www.gamespot.com/a/uploads/screen_kubrick/1582/15828986/3505175-endgame%20head.jpg',
+				],
+				seasons: ['Season 1', 'Season 2', 'Season 3'],
+				trailer: 'https://www.youtube.com/embed/6ZfuNTqbHE8',
+			},
+			{
+				name: 'solo',
 				alternativeName: 'Brat',
 				id: 16358,
-			
+				logo: {url: "https://avatars.mds.yandex.net/get-ott/1534341/2a00000178c64fe43f3b567acaaa73e861f0/orig"},
 				poster: {url: bg},
 				year: 2019,
 				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}, {name:'драма'}],
@@ -62,8 +111,9 @@ export const dataLoader = async() => {
 				trailer: 'https://www.youtube.com/watch?v=6ZfuNTqbHE8',
 			},
 			{
-				name: 'Avengers',
+				name: 'frfrfrfr',
 				alternativeName: 'Avengers',
+				logo: {url: "https://avatars.mds.yandex.net/get-ott/223007/2a00000179d1cc14e6c741017c7f7a2f15c2/orig"},
 				id: 75478,
 				rate: 5.6,
 				poster: {url: bg},
@@ -88,7 +138,7 @@ export const dataLoader = async() => {
 				name: 'Brat',
 				alternativeName: 'Brat',
 				id: 16358,
-			
+				logo: {url: "https://avatars.mds.yandex.net/get-ott/223007/2a00000179d1cc14e6c741017c7f7a2f15c2/orig"},
 				poster: {url: bg},
 				year: 2019,
 				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}, {name:'драма'}],
@@ -112,53 +162,7 @@ export const dataLoader = async() => {
 				name: 'Avengers',
 				alternativeName: 'Avengers',
 				id: 75478,
-				rate: 5.6,
-				poster: {url: bg},
-				year: 2019,
-				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}],
-				limitAge: '12+',
-				rating: {imdb: '7.89'},
-				movieLength: '1h 56min',
-				shortDescription:
-					'Marvels The Avengers (classified under the name Marvel Avengers Assemble in the United Kingdom and Ireland), or simply The Avengers, is a 2012 American superhero film based on the Marvel Comics superhero team of the same name.',
-				photos: [
-					'https://d23.com/app/uploads/2019/08/1180w-600h_081319_avengers-endgame-facts-780x440.jpg',
-					'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8OtuflE7bMKCV2SqoCqFHmb-wFv3E2iIaFdeay2gpFeb-JZ5rDYYT6I3bnONc9OtU6VQ&usqp=CAU',
-					'https://images.indianexpress.com/2019/05/avengers-endgame-chris-hemsworth-1200.jpg',
-					'https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2021/04/avengers-endgame-1619486515.jpg',
-					'https://www.gamespot.com/a/uploads/screen_kubrick/1582/15828986/3505175-endgame%20head.jpg',
-				],
-				seasons: ['Season 1', 'Season 2', 'Season 3'],
-				trailer: 'https://www.youtube.com/embed/6ZfuNTqbHE8',
-			},
-			{
-				name: 'Brat',
-				alternativeName: 'Brat',
-				id: 16358,
-			
-				poster: {url: bg},
-				year: 2019,
-				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}, {name:'драма'}],
-				rate: 9.6,
-				limitAge: '12+',
-				rating: [{imbd: '7.89'}],
-				movieLength: '1h 56min',
-				shortDescription:
-					'dfghjkjhgfdfghjklnjninvgdssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss',
-				photos: [
-					'https://d23.com/app/uploads/2019/08/1180w-600h_081319_avengers-endgame-facts-780x440.jpg',
-					'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8OtuflE7bMKCV2SqoCqFHmb-wFv3E2iIaFdeay2gpFeb-JZ5rDYYT6I3bnONc9OtU6VQ&usqp=CAU',
-					'https://images.indianexpress.com/2019/05/avengers-endgame-chris-hemsworth-1200.jpg',
-					'https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2021/04/avengers-endgame-1619486515.jpg',
-					'https://www.gamespot.com/a/uploads/screen_kubrick/1582/15828986/3505175-endgame%20head.jpg',
-				],
-				seasons: ['Season 1', 'Season 2', 'Season 3'],
-				trailer: 'https://www.youtube.com/watch?v=6ZfuNTqbHE8',
-			},
-			{
-				name: 'Avengers',
-				alternativeName: 'Avengers',
-				id: 75478,
+				logo: {url: "https://avatars.mds.yandex.net/get-ott/2439731/2a0000017c61da4f185f94d808f4d90182a8/orig"},
 				rate: 5.6,
 				poster: {url: bg},
 				year: 2019,
@@ -182,7 +186,7 @@ export const dataLoader = async() => {
 				name: 'Brat',
 				alternativeName: 'Brat',
 				id: 16358,
-			
+				logo: {url: "https://avatars.mds.yandex.net/get-ott/2439731/2a0000017c61da4f185f94d808f4d90182a8/orig"},
 				poster: {url: bg},
 				year: 2019,
 				genres: [{name:'триллер'}, {name:'боевик'}, {name:'комедия'}],
@@ -206,6 +210,7 @@ export const dataLoader = async() => {
 				name: 'Avengers',
 				alternativeName: 'Avengers',
 				id: 75478,
+				logo: {url: "https://avatars.mds.yandex.net/get-ott/2439731/2a0000017c61da4f185f94d808f4d90182a8/orig"},
 				rate: 5.6,
 				poster: {url: bg},
 				year: 2019,
@@ -227,6 +232,7 @@ export const dataLoader = async() => {
 			},
 			{
 				name: 'Brat',
+				logo: {url: "https://avatars.mds.yandex.net/get-ott/2439731/2a0000017c61da4f185f94d808f4d90182a8/orig"},
 				alternativeName: 'Brat',
 				id: 16358,
 				logo: {url: avengers},

@@ -13,6 +13,7 @@ const Popular = () => {
     const data = useLoaderData();
     const  [popularMovies, setPopularMovies ] = useState([]);
     const navigation = useNavigation();
+    const [ shadow, setShadow ] = useState('');
     
     const [ favs, setFavs ] = useState(
         JSON.parse(localStorage.getItem('favourites')) 
@@ -41,10 +42,10 @@ const Popular = () => {
     useEffect(() => {
         console.log(data)
        //const ratingOfMovies = data.toSorted((a, b) => b?.rating?.imdb - a?.rating?.imdb); 
-       const ratingOfMovies = data.sort((a, b) => b?.rating?.imdb - a?.rating?.imdb); 
-        console.log(ratingOfMovies);
+       setPopularMovies([...data].sort((a, b) => b?.rating?.imdb - a?.rating?.imdb)); 
+        console.log(popularMovies);
         console.log(data)
-        setPopularMovies(ratingOfMovies);
+        //setPopularMovies(ratingOfMovies);
 
     }, [])
 
@@ -121,7 +122,9 @@ const Popular = () => {
                             return <SwiperSlide 
                                         key={movie.id} 
                                         className={styles.trendItem} 
-                                        style={{ backgroundImage: `url(${movie.poster.url})` }}>
+                                        style={{ 
+                                            backgroundImage: `url(${movie.poster.url})` 
+                                            }}>
                                                 <span className={styles.trendRate}>
                                                     <i className='bx bxs-star bx-xs'></i>{popularMovies[0].rating.imdb}
                                                 </span>

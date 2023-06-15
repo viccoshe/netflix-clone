@@ -10,14 +10,9 @@ const tabs = [
         name: "Episodes",
 
     },
-    // {
-    //     _id: 3,
-    //     name: "Details",
-
-    // },
 ]
 
-const BottomNavigation = ({activeTab, setActiveTab}) => {
+const BottomNavigation = ({ activeTab, setActiveTab }) => {
     return ( 
         <nav className={styles.nav}>
             {tabs.map (tab=>
