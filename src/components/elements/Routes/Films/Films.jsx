@@ -70,14 +70,14 @@ const Films = () => {
                                             if(movie.genres.some((item) => item.name === gen.toLowerCase())){
                                                 return <SwiperSlide  
                                                             className={styles.filmItem}
-                                                            style={{ backgroundImage: `url(${movie.poster.url})`}}
+                                                            style={{ backgroundImage: `url(${movie?.poster?.url})`}}
                                                             key={movie.id}
                                                         >
                                                             <Link to={"/" + i}>
-                                                                {movie.name}
+                                                                {movie?.name}
                                                                 {/* {movie.alternativeName ? movie.alternativeName : movie.name} */}
                                                             </Link>  
-                                                            <span>{movie.year}</span>    
+                                                            <span>{movie?.year}</span>    
                                                         </SwiperSlide>  
                                             }
                                         })}  

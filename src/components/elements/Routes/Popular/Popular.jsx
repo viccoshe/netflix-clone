@@ -26,13 +26,13 @@ const Popular = () => {
 
 
         if(favs.length !== 0){
-            if(favs.length > 0 && favs.some((item, i) => item[0] === movie.id)){
-                setFavs(favs.filter(i => i[0] !== movie.id))
+            if(favs.length > 0 && favs.some((item, i) => item[0] === movie?.id)){
+                setFavs(favs.filter(i => i[0] !== movie?.id))
             }else{
-                setFavs([...favs, [movie.id]])
+                setFavs([...favs, [movie?.id]])
             } 
         }else{
-            setFavs([...favs, [movie.id]])
+            setFavs([...favs, [movie?.id]])
         }
         console.log(favs)
     }
@@ -55,12 +55,12 @@ const Popular = () => {
         >
             {popularMovies && popularMovies.length > 0 ?
                 <div className={styles.popularBlock}
-                     style={{ backgroundImage: `url(${popularMovies[9].poster.url})` }}>
+                     style={{ backgroundImage: `url(${popularMovies[9]?.poster?.url})` }}>
                     <div>NEW</div>
-                    <img className={styles.img} src={popularMovies[9].logo.url}></img>
+                    <img className={styles.img} src={popularMovies[9]?.logo?.url}></img>
                         <div className={styles.rate}>
-                            <span><i className='bx bxl-imdb'></i>{popularMovies[9].rating.imdb}</span>
-                            <span>{ popularMovies[9].language ?  popularMovies[9].language : 'English'}</span>
+                            <span><i className='bx bxl-imdb'></i>{popularMovies[9]?.rating?.imdb}</span>
+                            <span>{ popularMovies[9].language ?  popularMovies[9]?.language : 'English'}</span>
                         </div>
 
                         <Link to={"/" + 3}>
@@ -115,17 +115,17 @@ const Popular = () => {
                                         key={movie.id} 
                                         className={styles.trendItem} 
                                         style={{ 
-                                            backgroundImage: `url(${movie.poster.url})` 
+                                            backgroundImage: `url(${movie?.poster?.url})` 
                                             }}>
                                                 <span className={styles.trendRate}>
-                                                    <i className='bx bxs-star bx-xs'></i>{popularMovies[0].rating.imdb}
+                                                    <i className='bx bxs-star bx-xs'></i>{popularMovies[0]?.rating?.imdb}
                                                 </span>
                                                 <Link to={"/" + data.findIndex((film) => film === movie)}>
-                                                    {movie.name}
+                                                    {movie?.name}
                                                 </Link>  
-                                                <span className={styles.year}>{movie.year}</span>
+                                                <span className={styles.year}>{movie?.year}</span>
                                                 <button onClick={() => toggleFav(movie)}>
-                                                    {favs && favs.length > 0 && favs.some((item, i) => item[0] === movie.id ) 
+                                                    {favs && favs.length > 0 && favs.some((item, i) => item[0] === movie?.id ) 
                                                     ?  <i className='bx bxs-bookmark-minus bx-sm'></i>
                                                     :  <i className='bx bx-bookmark-plus bx-sm'></i>
                                                     }

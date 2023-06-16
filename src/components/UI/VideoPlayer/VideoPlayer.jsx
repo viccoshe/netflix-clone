@@ -28,7 +28,7 @@ const VideoPlayer = ( {movie, openVideo, setOpenVideo} ) => {
             
             </i>
 
-            <iframe src={movie.trailer ? movie.trailer : "https://www.youtube.com/embed/6ZfuNTqbHE8"} title="YouTube video player" frameBBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+            <iframe src={movie?.trailer ? movie?.trailer : "https://www.youtube.com/embed/6ZfuNTqbHE8"} title="YouTube video player" frameBBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
 
             </div>
         </motion.div>

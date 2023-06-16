@@ -86,12 +86,12 @@ const Header = ( { data, user, setUser, loginWindow, setLoginWindow }) => {
                     {query !== '' && data && data.length > 0 && data.some((m) => m.name.toLowerCase().includes(query))
                     ?
                         data.filter((movie) => 
-                            movie.name.toLowerCase().includes(query) 
+                            movie?.name.toLowerCase().includes(query) 
                                 ).map((movie, i) => (
                                     <li key={i}>
                                         <Link  to={"/" + i}>
-                                            <span>{movie.name}</span>
-                                            <span>{movie.year}</span>
+                                            <span>{movie?.name}</span>
+                                            <span>{movie?.year}</span>
                                         </Link>
                                     </li>
                                 ))                                  

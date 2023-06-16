@@ -18,8 +18,8 @@ const Watchlist = () => {
    const removeFav = (movie) => {
       removeFromFavourites(movie);
       if(favourites && favourites.length > 0){
-            if(favourites.some((item) => item[0] === movie.id)){
-              const elem = favourites.find((item, i) => item[0] === movie.id);
+            if(favourites.some((item) => item[0] === movie?.id)){
+              const elem = favourites.find((item, i) => item[0] === movie?.id);
                 setFavourites(favourites.filter(i => i !== elem));
                 console.log(favourites);
                   }
@@ -40,7 +40,7 @@ if( navigation === 'loading'){
                   {favourites && favourites.length > 0 && data.length > 0
                   ?
                   data.map((movie, i) => {
-                        if (favourites.length > 0  && favourites.some((item, i) => item[0] === movie.id)){
+                        if (favourites.length > 0  && favourites.some((item, i) => item[0] === movie?.id)){
                               return  <motion.div 
                                            key={movie.id}
                                            className={styles.item}
@@ -49,20 +49,20 @@ if( navigation === 'loading'){
                                            transition={{ duration: 0.1 }}
                                       >
                               <div className={styles.itemImg}>
-                                    <img src={movie.poster.url} alt={movie.name} />   
+                                    <img src={movie?.poster.url} alt={movie?.name} />   
                               </div>
                               <div className={styles.itemDetails}>
                                     <Link to={"/" + i}>
-                                          {movie.alternativeName ? movie.alternativeName : movie.name}
+                                          {movie?.alternativeName ? movie?.alternativeName : movie?.name}
                                     </Link>  
                                     <div className={styles.rate}><i class='bx bxs-star'></i>
-                                                {movie.rating.imdb}
+                                                {movie?.rating.imdb}
                                           </div> 
                                     <div className={styles.genres}>
-                                          {movie?.genres.map((m) => <span>{m.name}</span>)}
+                                          {movie?.genres.map((m) => <span>{m?.name}</span>)}
                                     </div>                                     
-                                    <div className={styles.time}>Time: <span>{movie.movieLength}M</span></div>
-                                    <div>{movie.shortDescription}</div>
+                                    <div className={styles.time}>Time: <span>{movie?.movieLength}M</span></div>
+                                    <div>{movie?.shortDescription}</div>
                               </div>
                               <button onClick={() => removeFav(movie)}><i className='bx bx-message-square-x'></i></button>
                         </motion.div>

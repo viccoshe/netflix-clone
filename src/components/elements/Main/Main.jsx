@@ -17,14 +17,14 @@ const Main = () => {
             className={styles.wrapper}
             style={ 
                     data[`${id}`]?.color 
-                    ? {boxShadow: `2px -30px 70px -46px ${data[id].color}`} 
+                    ? {boxShadow: `2px -30px 70px -46px ${data[id]?.color}`} 
                     : {boxShadow: '2px -30px 70px -46px #700b0b'}
                   } 
         > 
             <div 
                 className={styles.main}
                 style={{
-                    backgroundImage: `url(${data[`${id}`]?.poster.url})`
+                    backgroundImage: `url(${data[`${id}`]?.poster?.url})`
                 }}
             >
                 {activeTab === 1 ? (

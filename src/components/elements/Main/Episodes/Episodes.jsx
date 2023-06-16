@@ -40,16 +40,16 @@ const Episodes = ({ movie} ) => {
             className={styles.episodes}
         >
              <img 
-                style={ movie.name === 'Брат' ? {width: bratStyles.width} : movie.name === '1+1' ? {width: intouchStyles.width}  : {width: '60%', margin: '3rem 0'}}
+                style={ movie?.name === 'Брат' ? {width: bratStyles.width} : movie?.name === '1+1' ? {width: intouchStyles.width}  : {width: '60%', margin: '3rem 0'}}
                 className={styles.img} 
                 src={movie?.logo.url}
             >
             </img>
-             <span className={styles.year}>{movie.year}</span>
+             <span className={styles.year}>{movie?.year}</span>
              <div className={styles.rate}>
-                {movie.rating.imbd ? <span><i className='bx bxl-imdb'></i>{movie.rating.imbd}</span> : ''}
-                {movie.rating.kp ? <span><i className='bx bxs-film'></i>{movie.rating.kp}</span> : ''}
-                {movie.rating.filmCritics ? <span><i className='bx bxs-color'></i>{movie.rating.filmCritics}</span> : ''}
+                {movie?.rating.imbd ? <span><i className='bx bxl-imdb'></i>{movie.rating.imbd}</span> : ''}
+                {movie?.rating.kp ? <span><i className='bx bxs-film'></i>{movie.rating.kp}</span> : ''}
+                {movie?.rating.filmCritics ? <span><i className='bx bxs-color'></i>{movie.rating.filmCritics}</span> : ''}
             </div>
             {/* <select className={styles.stream}>
                     {movie.watchability.items && movie?.watchability?.items.map(stream => (
@@ -58,7 +58,7 @@ const Episodes = ({ movie} ) => {
                 </select> */}
             <div className={styles.countries}>
                 {movie.countries && movie.countries.map(c => {
-                    return <span>{c.name}</span>
+                    return <span>{c?.name}</span>
                 })}
             </div>
 
@@ -108,7 +108,7 @@ const Episodes = ({ movie} ) => {
                                     <img 
                                         style={{ width: '100%', borderRadius: '2%'}} 
                                         src={photo} 
-                                        alt={movie.name}>
+                                        alt={movie?.name}>
                                     </img>
                                     <div className={styles.number}>{(++id).toString()}</div>
                                 </div>
@@ -124,7 +124,7 @@ const Episodes = ({ movie} ) => {
                                     <img 
                                         style={{ width: '100%', borderRadius: '2%'}} 
                                         src={photo} 
-                                        alt={movie.name}>
+                                        alt={movie?.name}>
                                     </img>
                                     <div className={styles.number}>{(++id).toString()}</div>
                                 </div>
