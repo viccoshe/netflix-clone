@@ -100,7 +100,8 @@ const Episodes = ({ movie} ) => {
                         {movie?.photos
                         ?
                         movie.photos.map((photo, id) =>(
-                            <SwiperSlide key={id}>
+                            <SwiperSlide 
+                                key={id}>
                                 <div onClick={() => getPopup(photo)} 
                                      className={styles.episodeItem}
                                 >
@@ -115,7 +116,8 @@ const Episodes = ({ movie} ) => {
                         ))
                         : 
                         DATA[0].photos.map((photo, id) =>(
-                            <SwiperSlide key={id}>
+                            <SwiperSlide 
+                                key={id}>
                                 <div onClick={() => getPopup(photo)} 
                                     className={styles.episodeItem}
                                 >
