@@ -22,7 +22,7 @@ function App() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Root />} loader={dataLoader} >
+      <Route element={<Root />} loader={dataLoader} >
         <Route index element={<Popular />} loader={dataLoader}/> 
         <Route path="/:id" element={<Main/>} loader={dataLoader}/>
         <Route path="/watchlist" element={<Watchlist/>} loader={dataLoader}/>
@@ -34,9 +34,9 @@ function App() {
 
   return (
     <div>
-        <DataContext.Provider value={{data}}>
+          <DataContext.Provider value={{data}}>
           <RouterProvider router={router}/>      
-        </DataContext.Provider>        
+        </DataContext.Provider>  
     </div>
   );
 }

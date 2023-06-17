@@ -53,7 +53,7 @@ if( navigation === 'loading'){
                               </div>
                               <div className={styles.itemDetails}>
                                     <Link to={"/" + i}>
-                                          {movie?.alternativeName ? movie?.alternativeName : movie?.name}
+                                          {movie?.name}
                                     </Link>  
                                     <div className={styles.rate}><i class='bx bxs-star'></i>
                                                 {movie?.rating.imdb}

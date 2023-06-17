@@ -89,7 +89,7 @@ const Header = ( { data, user, setUser, loginWindow, setLoginWindow }) => {
                             movie?.name.toLowerCase().includes(query) 
                                 ).map((movie, i) => (
                                     <li key={i}>
-                                        <Link  to={"/" + i}>
+                                        <Link  to={"/" + data.findIndex((film) => film === movie)}>
                                             <span>{movie?.name}</span>
                                             <span>{movie?.year}</span>
                                         </Link>

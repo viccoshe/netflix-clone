@@ -20,17 +20,6 @@ const Episodes = ({ movie} ) => {
         setPhotoUrl(photo);
         setPopup(!popup);
     }
-    console.log(movie);
-
-    const bratStyles = {
-        width: '29%',
-        height: '10rem',
-    }
-
-    const intouchStyles = {
-        width: '23%',
-    }
-
 
     return (
         <motion.div 
@@ -40,7 +29,7 @@ const Episodes = ({ movie} ) => {
             className={styles.episodes}
         >
              <img 
-                style={ movie?.name === 'Брат' ? {width: bratStyles.width} : movie?.name === '1+1' ? {width: intouchStyles.width}  : {width: '60%', margin: '3rem 0'}}
+                style={ movie?.name === 'Брат' ? {width: '29%'} : movie?.name === '1+1' ? {width:'23%'}  : {width: '60%', margin: '3rem 0'}}
                 className={styles.img} 
                 src={movie?.logo.url}
             >
