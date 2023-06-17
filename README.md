@@ -6,9 +6,10 @@ The website was built with the use of **Firebase Authentication** (to sign in/si
 ![image](https://github.com/viccoshe/netflix-clone/assets/109619263/9aa0bf23-3153-4a21-a47c-b2a9b308b73e)
 
 ### It's adaptive for mobile/desktop versions.
-![image](https://github.com/viccoshe/netflix-clone/assets/109619263/a0baf6b9-d810-4441-b071-7a3d57713e3e)
+![image](https://github.com/viccoshe/netflix-clone/assets/109619263/f87919b0-46a6-4bdc-85f4-1a0812a91a7b)
 
-Main website functionality
+
+#### Main website functionality
 ![Netflix](https://github.com/viccoshe/netflix-clone/assets/109619263/29eb3d8a-c8a4-41fe-a221-e699fcea9e90)
 
 
