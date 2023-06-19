@@ -1,6 +1,6 @@
 # NETFLIX CloneRevision Website with Kinopoisk API
 
-The website was built with the use of **Firebase Authentication** (to sign in/sign out with Google Account or login/password), **Unofficial Kinopoisk API** (get filtered data with the most popular movies), **HTML5-QRcode** to scan the QRs. Users are able to add/remove items in the watchlist and filter data by movie's name. 
+The website was built with the use of *Firebase Authentication* (to sign in/sign out with Google Account or login/password), *Unofficial Kinopoisk API* (get filtered data with the most popular movies), *HTML5-QRcode* to scan the QRs. Users are able to add/remove items in the watchlist and filter data by movie's name. 
 
 🍀 [CLICK TO DEPLOY](https://netflix-clone-b2f54.web.app/)
 
